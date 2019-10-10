@@ -24,7 +24,7 @@ const StyledInput = styled.input`
     outline: none;
   }
   font-size: 20px;
-  padding-left: 10px;
+  padding-left: 15px;
   border: none;
   width: 290px;
   height: 39px;
