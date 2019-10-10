@@ -16,6 +16,6 @@ const MainBody = styled.main`
   color: #242623;
 `;
 
-export default function Main() {
+export default function MainBackground() {
   return <MainBody />;
 }
