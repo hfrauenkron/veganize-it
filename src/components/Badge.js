@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
-const BadgeDiv = styled.span`
+const BadgeDiv = styled.div`
   border-radius: 5px;
   padding: 4px 10px 3px 10px;
   border: none;
