@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import CloseButton from "./CloseButton";
+import PropTypes from "prop-types";
 
 const WrapperBadge = styled.div`
   margin: 25px 10px;
 `;
 
-const BadgeSpan = styled.span`
+const BadgeButtonSpan = styled.span`
+  position: relative;
   border-radius: 5px;
-  padding: 4px 10px 3px 10px;
+  padding: 4px 12px 3px 11px;
   border: none;
   box-shadow: 2px 2px 2px #00000029;
   font-family: "Fira Sans", sans-serif;
@@ -21,20 +23,24 @@ const BadgeSpan = styled.span`
 
 const StyledCloseButton = styled.span`
   position: absolute;
-  left: 114px;
-  top: -2px;
+  right: -16px;
+  top: -16px;
   cursor: pointer;
 `;
 
-export default function BadgeClose({ children }) {
+export default function BadgeButtonClose({ children }) {
   return (
     <WrapperBadge>
-      <BadgeSpan>
+      <BadgeButtonSpan>
         {children}
         <StyledCloseButton>
           <CloseButton />
         </StyledCloseButton>
-      </BadgeSpan>
+      </BadgeButtonSpan>
     </WrapperBadge>
   );
 }
+
+BadgeButtonClose.propTypes = {
+  children: PropTypes.node.isRequired
+};
