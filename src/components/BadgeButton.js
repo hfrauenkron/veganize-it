@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
-const BadgeSpan = styled.span`
+const BadgeButtonSpan = styled.span`
   border-radius: 5px;
   padding: 4px 10px 3px 10px;
   border: none;
@@ -24,11 +24,11 @@ const BadgeSpan = styled.span`
   cursor: pointer;
 `;
 
-export default function Badge({ active, children }) {
-  return <BadgeSpan light={active}>{children}</BadgeSpan>;
+export default function BadgeButton({ active, children }) {
+  return <BadgeButtonSpan light={active}>{children}</BadgeButtonSpan>;
 }
 
-Badge.propTypes = {
+BadgeButton.propTypes = {
   active: PropTypes.bool,
   children: PropTypes.node.isRequired
 };
