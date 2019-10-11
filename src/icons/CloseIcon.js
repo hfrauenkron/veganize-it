@@ -8,11 +8,7 @@ export default function CloseIcon() {
       height="14"
       viewBox="0 0 25.498 26.054"
     >
-      <g
-        id="Close-Menu_8"
-        data-name="Close-Menu – 8"
-        transform="translate(3.536 3.536)"
-      >
+      <g transform="translate(3.536 3.536)">
         <line
           id="Line_10"
           data-name="Line 10"

@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
-const BadgeDiv = styled.div`
+const BadgeSpan = styled.span`
   border-radius: 5px;
   padding: 4px 10px 3px 10px;
   border: none;
@@ -21,10 +21,11 @@ const BadgeDiv = styled.div`
           color: #ffffff;
         `}
   margin: 5px;
+  cursor: pointer;
 `;
 
 export default function Badge({ active, children }) {
-  return <BadgeDiv light={active}>{children}</BadgeDiv>;
+  return <BadgeSpan light={active}>{children}</BadgeSpan>;
 }
 
 Badge.propTypes = {

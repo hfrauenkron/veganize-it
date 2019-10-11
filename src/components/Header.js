@@ -10,6 +10,7 @@ import {
 } from "../stories/Title.stories";
 import CloseMenuIcon from "../icons/CloseMenuIcon";
 import MenuIcon from "../icons/MenuIcon";
+import PropTypes from "prop-types";
 
 const HeaderDiv = styled.div`
   display: flex;
@@ -55,7 +56,7 @@ const StyledCloseMenuIcon = styled.div`
   ${props =>
     props.selected
       ? css`
-          display: show;
+          display: block;
           margin-left: 5.5px;
         `
       : css`
@@ -70,7 +71,7 @@ const StyledMenuIcon = styled.div`
           display: none;
         `
       : css`
-          display: show;
+          display: block;
         `}
 `;
 
@@ -96,3 +97,7 @@ export default function Header({ selected }) {
     </HeaderMenuDiv>
   );
 }
+
+Header.propTypes = {
+  selected: PropTypes.bool
+};
