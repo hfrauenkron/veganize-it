@@ -12,6 +12,7 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #242623;
+  background: #D3E5CC;
 }
 `;
 

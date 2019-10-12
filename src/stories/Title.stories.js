@@ -5,7 +5,8 @@ export default {
   title: "Title"
 };
 
-export const HeaderTitle = () => <Title active>VEGANIZE IT</Title>;
+export const HeaderTitle = () => <Title headline>VEGANIZE IT</Title>;
+export const WelcomeTitle = () => <Title boldHeadline>VEGANIZE IT</Title>;
 
 export const HomeTitle = () => <Title>HOME</Title>;
 export const FavouritesTitle = () => <Title>FAVOURITES</Title>;

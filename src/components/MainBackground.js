@@ -1,7 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import Title from "./Title";
 
 const MainBody = styled.main`
+  z-index: -100;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,5 +20,9 @@ const MainBody = styled.main`
 `;
 
 export default function MainBackground() {
-  return <MainBody />;
+  return (
+    <MainBody>
+      <Title boldHeadline />
+    </MainBody>
+  );
 }

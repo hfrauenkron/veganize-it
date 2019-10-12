@@ -8,14 +8,16 @@ const HeadTitle = styled.h1`
   font-family: "Fira Sans", sans-serif;
   color: #242623;
   font-weight: 900;
-  ${props =>
-    props.headline
-      ? css`
-          font-size: 34px;
-        `
-      : css`
-          font-size: 21px;
-        `};
+  ${props => {
+    if (props.boldHeadline) {
+      return `font-size: 52px;`;
+    } else if (props.headline) {
+      return `font-size: 34px;
+        `;
+    } else {
+      return `font-size: 21px`;
+    }
+  }};
   ${props =>
     props.link
       ? css`
@@ -27,9 +29,9 @@ const HeadTitle = styled.h1`
         `}
 `;
 
-export default function Title({ link, active, children }) {
+export default function Title({ link, headline, boldHeadline, children }) {
   return (
-    <HeadTitle link={link} headline={active}>
+    <HeadTitle link={link} headline={headline} boldHeadline={boldHeadline}>
       {children}
     </HeadTitle>
   );
