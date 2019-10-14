@@ -3,21 +3,19 @@ import styled from "styled-components";
 
 const CardDiv = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 379px;
-  height: 533px;
+  height: 100%;
   border: none;
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 900;
-  font-size: 21px;
   background: #ffffff;
-  color: #242623;
   box-shadow: 2px -2px 2px #00000029;
   border-radius: 10px;
+  margin: 0 20px 0px;
+  padding: 20px;
 `;
 
-export default function Card() {
-  return <CardDiv />;
+export default function Card({ children }) {
+  return <CardDiv>{children}</CardDiv>;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { SkipTitle, LoginTitle, RegisterTitle } from "../stories/Title.stories";
 
 const LoginDiv = styled.div`
@@ -39,6 +40,11 @@ const StyledTitleTop = styled.span`
   margin: 12px 0 -2px 0;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+  color: #242623;
+`;
+
 export default function Login() {
   return (
     <LoginDiv>
@@ -49,7 +55,9 @@ export default function Login() {
       <StyledLogin type="text" placeholder="Username" />
       <StyledLogin type="password" placeholder="Password" />
       <StyledTitleBottom>
-        <SkipTitle />
+        <StyledLink to="/home">
+          <SkipTitle />
+        </StyledLink>
       </StyledTitleBottom>
     </LoginDiv>
   );
