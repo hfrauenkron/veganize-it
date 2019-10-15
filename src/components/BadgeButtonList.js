@@ -16,10 +16,10 @@ const BadgeButtonSection = styled.section`
 export default function BadgeButtonList({ content }) {
   return (
     <BadgeButtonSection>
-      {content.map(content => {
+      {content.map(item => {
         return (
           <BadgeButton list light content={content}>
-            {content.toUpperCase()}
+            {item.toUpperCase()}
           </BadgeButton>
         );
       })}
