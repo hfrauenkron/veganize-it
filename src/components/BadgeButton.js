@@ -20,15 +20,27 @@ const BadgeButtonSpan = styled.span`
           background: #242623;
           color: #ffffff;
         `}
-  margin: 5px;
-  cursor: pointer;
+  ${props =>
+    props.list
+      ? css`
+          margin: 5px 5px 5px 5px;
+          cursor: pointer;
+        `
+      : css`
+          margin: 24px 0 20px 0;
+        `}
 `;
 
-export default function BadgeButton({ active, children }) {
-  return <BadgeButtonSpan light={active}>{children}</BadgeButtonSpan>;
+export default function BadgeButton({ light, list, children }) {
+  return (
+    <BadgeButtonSpan list={list} light={light}>
+      {children}
+    </BadgeButtonSpan>
+  );
 }
 
 BadgeButton.propTypes = {
-  active: PropTypes.bool,
+  list: PropTypes.bool,
+  light: PropTypes.bool,
   children: PropTypes.node.isRequired
 };

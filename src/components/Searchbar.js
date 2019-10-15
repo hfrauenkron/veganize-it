@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "../icons/SearchIcon";
+import { content } from "../api/content";
 
 const StyledSearchbar = styled.div`
   display: flex;
@@ -12,6 +13,8 @@ const StyledSearchbar = styled.div`
   width: 343px;
   box-shadow: 2px 2px 2px #00000029;
   padding-left: 5px;
+  margin: 25px 0 20px 0;
+  background: #ffffff;
 `;
 
 const StyledInput = styled.input`
@@ -34,10 +37,20 @@ const StyledSearchIcon = styled.span`
   padding: 5px 15px 0 0;
 `;
 
-export default function Searchbar() {
+export default function Searchbar({ onSearch }) {
+  function handleFilter(event) {
+    const { value } = event.target;
+    onSearch(value);
+  }
+
   return (
     <StyledSearchbar>
-      <StyledInput type="search" placeholder="What do you want to replace?" />
+      <StyledInput
+        id="search"
+        type="search"
+        placeholder="What do you want to replace?"
+        onChange={handleFilter}
+      />
       <StyledSearchIcon>
         <SearchIcon />
       </StyledSearchIcon>

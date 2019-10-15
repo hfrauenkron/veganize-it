@@ -1,25 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { content } from "../api/content";
 import BadgeButton from "./BadgeButton";
 
-const BadgeButtonSection = styled.div`
+const BadgeButtonSection = styled.section`
   display: flex;
   flex-direction: row;
-  width: 352px;
+  width: 370px;
   height: auto;
+  padding-left: 8px;
   justify-content: flex-start;
   align-items: center;
   flex-flow: wrap;
 `;
 
-export default function BadgeButtonList() {
+export default function BadgeButtonList({ content }) {
   return (
     <BadgeButtonSection>
-      {content.map(content => {
+      {content.map(item => {
         return (
-          <BadgeButton list light>
-            {content.name}
+          <BadgeButton list light content={content}>
+            {item.toUpperCase()}
           </BadgeButton>
         );
       })}
