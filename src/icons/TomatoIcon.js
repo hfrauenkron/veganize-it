@@ -4,14 +4,14 @@ export default function TomatoIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      // xmlns:xlink="http://www.w3.org/1999/xlink"
-      width="198"
-      height="184"
-      viewBox="0 0 227.681 215.766"
+      xlink="http://www.w3.org/1999/xlink"
+      width="260.154"
+      height="252.738"
+      viewBox="0 0 260.154 252.738"
     >
       <defs>
         <pattern
-          id="pattern"
+          id="pattern3"
           preserveAspectRatio="none"
           width="100%"
           height="100%"
@@ -27,8 +27,8 @@ export default function TomatoIcon() {
           id="Untitled-7"
           x="0"
           y="0"
-          width="227.681"
-          height="215.766"
+          width="260.154"
+          height="252.738"
           filterUnits="userSpaceOnUse"
         >
           <feOffset dx="2" dy="2" input="SourceAlpha" />
@@ -44,8 +44,8 @@ export default function TomatoIcon() {
           data-name="Untitled-7"
           width="198"
           height="184"
-          transform="translate(26.61 1) rotate(8)"
-          fill="url(#pattern)"
+          transform="matrix(1, 0.02, -0.02, 1, 4.21, 1)"
+          fill="url(#pattern3)"
         />
       </g>
     </svg>

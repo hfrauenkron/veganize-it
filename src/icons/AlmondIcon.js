@@ -8,10 +8,11 @@ export default function AlmondIcon() {
       width="133.88"
       height="200.541"
       viewBox="0 0 133.88 200.541"
+      id="almond"
     >
       <defs>
         <pattern
-          id="pattern"
+          id="pattern1"
           width="1"
           height="1"
           patternTransform="matrix(1, 0, 0, -1, 0, 362)"
@@ -46,7 +47,7 @@ export default function AlmondIcon() {
           width="100.807"
           height="181"
           transform="translate(128.88 179.77) rotate(171)"
-          fill="url(#pattern)"
+          fill="url(#pattern1)"
         />
       </g>
     </svg>

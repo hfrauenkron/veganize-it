@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 import LogoIcon from "../icons/LogoIcon";
 import {
   HeaderTitle,
@@ -13,51 +14,67 @@ import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
 
 const HeaderDiv = styled.div`
+  z-index: 100;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  width: 414px;
-  height: 76px;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 100vw;
+  min-height: 76px;
   border: none;
   font-family: "Fira Sans", sans-serif;
   font-weight: 900;
   font-size: 34px;
   background: #edffe6;
   color: #242623;
+  box-shadow: none;
 `;
 
-const HeaderMenuDiv = styled.div`
+const MenuDiv = styled.div`
+  ${props =>
+    props.clicked
+      ? css`
+          z-index: 100;
+          position: absolute;
+          margin-top: 76px;
+        `
+      : css`
+          z-index: none;
+          position: none;
+        `}
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 414px;
+  width: 100vw;
   box-shadow: 0 2px 2px 0 #00000029;
   background-color: #edffe6;
 `;
 
 const MenuItemsDiv = styled.div`
   ${props =>
-    props.selected
+    props.clicked
       ? css`
           display: flex;
           flex-direction: column;
           align-items: center;
           width: 414px;
           height: 159px;
-          margin-left: 15px;
+          text-decoration: none;
         `
       : css`
           display: none;
-        `}
+        `};
 `;
 
 const StyledCloseMenuIcon = styled.div`
   ${props =>
-    props.selected
+    props.clicked
       ? css`
           display: block;
           margin-left: 5.5px;
+          cursor: pointer;
         `
       : css`
           display: none;
@@ -66,38 +83,58 @@ const StyledCloseMenuIcon = styled.div`
 
 const StyledMenuIcon = styled.div`
   ${props =>
-    props.selected
+    props.clicked
       ? css`
           display: none;
         `
       : css`
           display: block;
+          cursor: pointer;
         `}
 `;
 
-export default function Header({ selected }) {
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+  color: #242623;
+`;
+
+export default function Header() {
+  const [clicked, setClicked] = useState(false);
   return (
-    <HeaderMenuDiv>
+    <>
       <HeaderDiv>
-        <LogoIcon />
+        <StyledLink to="/home">
+          <LogoIcon />
+        </StyledLink>
         <HeaderTitle />
-        <StyledCloseMenuIcon selected={selected}>
+        <StyledCloseMenuIcon
+          onClick={() => setClicked(false)}
+          clicked={clicked}
+        >
           <CloseMenuIcon />
         </StyledCloseMenuIcon>
-        <StyledMenuIcon selected={selected}>
+        <StyledMenuIcon onClick={() => setClicked(true)} clicked={clicked}>
           <MenuIcon />
         </StyledMenuIcon>
       </HeaderDiv>
-      <MenuItemsDiv selected={selected}>
-        <HomeTitle />
-        <FavouritesTitle />
-        <AccountTitle />
-        <AboutTitle />
-      </MenuItemsDiv>
-    </HeaderMenuDiv>
+      <MenuDiv clicked={clicked}>
+        <MenuItemsDiv clicked={clicked}>
+          <StyledLink to="/home">
+            <HomeTitle />
+          </StyledLink>
+          <StyledLink to="/favourites">
+            <FavouritesTitle />
+          </StyledLink>
+          <StyledLink to="/about">
+            <AboutTitle />
+          </StyledLink>
+          <AccountTitle />
+        </MenuItemsDiv>
+      </MenuDiv>
+    </>
   );
 }
 
 Header.propTypes = {
-  selected: PropTypes.bool
+  clicked: PropTypes.bool
 };

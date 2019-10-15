@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import WelcomeCard from "../components/WelcomeCard";
-import Login from "../components/Login";
+import Header from "../components/Header";
+import Title from "../components/Title";
 
 const WrapperDiv = styled.div`
   display: flex;
@@ -9,11 +9,11 @@ const WrapperDiv = styled.div`
   align-items: center;
 `;
 
-export default function Welcome() {
+export default function Favourites() {
   return (
     <WrapperDiv>
-      <WelcomeCard />
-      <Login />
+      <Header />
+      <Title headline>FAVOURITES</Title>
     </WrapperDiv>
   );
 }

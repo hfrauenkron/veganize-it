@@ -5,18 +5,13 @@ export default {
   title: "Title"
 };
 
-export const HeaderTitle = () => <Title headline>VEGANIZE IT</Title>;
+export const HeaderTitle = () => <Title headerHeadline>VEGANIZE IT</Title>;
 export const WelcomeTitle = () => <Title boldHeadline>VEGANIZE IT</Title>;
 
 export const HomeTitle = () => <Title>HOME</Title>;
 export const FavouritesTitle = () => <Title>FAVOURITES</Title>;
 export const AccountTitle = () => <Title>ACCOUNT</Title>;
 export const AboutTitle = () => <Title>ABOUT</Title>;
-
-export const HomeLinkTitle = () => <Title link>HOME</Title>;
-// export const FavouritesLinkTitle = () => <Title link>FAVOURITES</Title>;
-// export const AccountLinkTitle = () => <Title link>ACCOUNT</Title>;
-// export const AboutLinkTitle = () => <Title link>ABOUT</Title>;
 
 export const SkipTitle = () => <Title link>SKIP</Title>;
 export const LoginTitle = () => <Title>LOGIN/</Title>;

@@ -4,13 +4,14 @@ export default function CashewIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      // xmlns:xlink="http://www.w3.org/1999/xlink"
+      xlink="http://www.w3.org/1999/xlink"
       width="162.332"
       height="132.729"
       viewBox="0 0 162.332 132.729"
+      id="cashew"
     >
       <defs>
-        <pattern id="pattern" width="1" height="1" viewBox="0 0 144 110">
+        <pattern id="pattern2" width="1" height="1" viewBox="0 0 144 110">
           <image
             preserveAspectRatio="none"
             width="144"
@@ -40,7 +41,7 @@ export default function CashewIcon() {
           width="144"
           height="110"
           transform="translate(14.41 1) rotate(7)"
-          fill="url(#pattern)"
+          fill="url(#pattern2)"
         />
       </g>
     </svg>
