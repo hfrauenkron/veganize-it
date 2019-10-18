@@ -1,8 +1,9 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React, { useState } from "react";
+import styled, { css, keyframes } from "styled-components";
 import LikeIcon from "../icons/LikeIcon";
 
 const WrapperDiv = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   font-family: "Roboto", sans-serif;
@@ -10,47 +11,58 @@ const WrapperDiv = styled.div`
   font-size: 20px;
   border: none;
   color: #242623;
-  padding: 0px;
-  /* margin: auto; */
-`;
-
-const StyledLikeIcon = styled(LikeIcon)`
-  cursor: pointer;
-  filter: drop-shadow(2px 2px 2px #00000029);
-  ${props =>
-    props.clicked
-      ? css`
-          fill: #242623;
-          stroke: none;
-        `
-      : css`
-          fill: #ffffff;
-          stroke: #242623;
-        `}
+  width: 100%;
 `;
 
 const StyledLikeCount = styled.span`
   padding-left: 5px;
+  margin-left: 30px;
   font-size: 20;
   border: none;
 `;
 
-// let clicks = "0";
-// const button = (document.querySelector("#countButton").value = ++clicks);
-// const showCount = document.querySelector("#showCount");
-// window.onload = function() {
-//   button.addEventListener("click", event => {
-//     showCount.innerHTML = `Click count: ${event.details}`;
-//   });
-// };
+const jump = keyframes`
+  from { transform: translate3d(0, 0, 0);}
+    to { transform: translate3d(0, -25px, 0);}
+`;
 
-export default function Vote({ clicked }) {
+const JumpLike = styled.span`
+  margin-left: 5px;
+  z-index: 100;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  cursor: pointer;
+  filter: drop-shadow(2px 2px 2px #00000029);
+  fill: #ffffff;
+  stroke: #242623;
+  ${props =>
+    props.clicked
+      ? css`
+          animation: ${jump} 0.3s ease-in-out;
+          animation-direction: alternate;
+          animation-iteration-count: 1;
+        `
+      : css`
+          animation: none;
+        `}
+`;
+
+export default function Vote() {
+  const [count, setCount] = useState(0);
+  const [clicked, setClicked] = useState(false);
+
+  function handleClickCount() {
+    setClicked(!clicked);
+    setCount(count + 1);
+  }
+
   return (
     <WrapperDiv>
-      <StyledLikeIcon clicked={clicked} type="button" id="countButton" />
-      <StyledLikeCount id="showCount" value="0">
-        0
-      </StyledLikeCount>
+      <JumpLike onClick={handleClickCount} clicked={clicked}>
+        <LikeIcon />
+      </JumpLike>
+      <StyledLikeCount>{count}</StyledLikeCount>
     </WrapperDiv>
   );
 }
