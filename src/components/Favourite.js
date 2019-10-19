@@ -14,7 +14,7 @@ const WrapperDiv = styled.div`
 
 const StyledFavouriteIcon = styled(FavouriteIcon)`
   cursor: pointer;
-  margin: 5px;
+  margin: 0 5px 5px 0;
   filter: drop-shadow(2px 2px 2px #00000029);
   ${props =>
     props.liked

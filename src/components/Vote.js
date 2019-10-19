@@ -26,7 +26,7 @@ const jump = keyframes`
     to { transform: translate3d(0, -25px, 0);}
 `;
 
-const JumpLike = styled.span`
+const JumpingLike = styled.span`
   margin-left: 5px;
   z-index: 100;
   position: absolute;
@@ -59,9 +59,9 @@ export default function Vote() {
 
   return (
     <WrapperDiv>
-      <JumpLike onClick={handleClickCount} click={click}>
+      <JumpingLike onClick={handleClickCount} click={click}>
         <LikeIcon />
-      </JumpLike>
+      </JumpingLike>
       <StyledLikeCount>{count}</StyledLikeCount>
     </WrapperDiv>
   );
