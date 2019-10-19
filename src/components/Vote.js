@@ -37,7 +37,7 @@ const JumpLike = styled.span`
   fill: #ffffff;
   stroke: #242623;
   ${props =>
-    props.clicked
+    props.click
       ? css`
           animation: ${jump} 0.3s ease-in-out;
           animation-direction: alternate;
@@ -50,16 +50,16 @@ const JumpLike = styled.span`
 
 export default function Vote() {
   const [count, setCount] = useState(0);
-  const [clicked, setClicked] = useState(false);
+  const [click, setClick] = useState(false);
 
   function handleClickCount() {
-    setClicked(!clicked);
+    setClick(!click);
     setCount(count + 1);
   }
 
   return (
     <WrapperDiv>
-      <JumpLike onClick={handleClickCount} clicked={clicked}>
+      <JumpLike onClick={handleClickCount} click={click}>
         <LikeIcon />
       </JumpLike>
       <StyledLikeCount>{count}</StyledLikeCount>

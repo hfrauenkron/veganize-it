@@ -50,33 +50,34 @@ const StyledArrow = styled(ArrowIconDown)`
 
 const AccordionContent = styled.div`
   min-width: 100px;
-  color: red;
+  color: #242623;
+  padding: 5px;
   overflow: hidden;
   display: ${props => (props.clicked ? "block" : "none")};
   transition: max-height 0.6s ease;
 `;
 
 function Accordion() {
+  //create AccordionList, leave state with Accordion-component
   const [clicked, setClicked] = useState(false);
   function handleClick() {
     setClicked(!clicked);
   }
   return (
     <span>
-      {data.map((item, key, value) => (
+      {data[0].alt.map((item, index) => (
         <AccordionDiv>
-          {console.log(item)}
           <AccordionHead onClick={handleClick}>
             <div>
-              <BadgeButton key={key}>{item.alt.key}</BadgeButton>
+              <BadgeButton>{item.name.toUpperCase()}</BadgeButton>
               <StyledArrow clicked={clicked} />
             </div>
             <div>
               <UseIcons />
             </div>
           </AccordionHead>
-          <AccordionContent key={value} clicked={clicked}>
-            <p>{item.alt.value}</p>
+          <AccordionContent key={index} clicked={clicked}>
+            <p>{item.description}</p>
             <StyledIcons>
               <Favourite liked />
               <Vote />
