@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import FavouriteIcon from "../icons/FavouriteIcon";
 
@@ -10,14 +10,14 @@ const WrapperDiv = styled.div`
   font-size: 20px;
   border: none;
   color: #242623;
-  padding: 0px;
 `;
 
 const StyledFavouriteIcon = styled(FavouriteIcon)`
   cursor: pointer;
+  margin: 0 5px 5px 0;
   filter: drop-shadow(2px 2px 2px #00000029);
   ${props =>
-    props.clicked
+    props.liked
       ? css`
           fill: #e44346;
           stroke: #e44346;
@@ -28,10 +28,14 @@ const StyledFavouriteIcon = styled(FavouriteIcon)`
         `}
 `;
 
-export default function Favourite({ clicked }) {
+export default function Favourite() {
+  const [liked, setLiked] = useState(false);
+  function handleLiked() {
+    setLiked(!liked);
+  }
   return (
-    <WrapperDiv>
-      <StyledFavouriteIcon clicked={clicked} />
+    <WrapperDiv onClick={handleLiked}>
+      <StyledFavouriteIcon liked={liked} />
     </WrapperDiv>
   );
 }
