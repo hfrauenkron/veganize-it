@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import ArrowIconDown from "../icons/ArrowIconDown";
 import BadgeButton from "./BadgeButton";
 import UseIcons from "./UseIcons";
-import { data } from "../api/data";
 import Favourite from "./Favourite";
 import Vote from "./Vote";
 
@@ -27,7 +26,6 @@ const AccordionHead = styled.div`
   align-items: center;
   padding: 0 5px;
   width: 100%;
-  color: #ffffff;
 `;
 
 const StyledIcons = styled.div`
@@ -57,39 +55,33 @@ const AccordionContent = styled.div`
   transition: max-height 0.6s ease;
 `;
 
-function Accordion() {
-  //create AccordionList, leave state with Accordion-component
+export default function Accordion({ item, index }) {
   const [clicked, setClicked] = useState(false);
   function handleClick() {
     setClicked(!clicked);
   }
   return (
-    <span>
-      {data[0].alt.map((item, index) => (
-        <AccordionDiv>
-          <AccordionHead onClick={handleClick}>
-            <div>
-              <BadgeButton>{item.name.toUpperCase()}</BadgeButton>
-              <StyledArrow clicked={clicked} />
-            </div>
-            <div>
-              <UseIcons />
-            </div>
-          </AccordionHead>
-          <AccordionContent key={index} clicked={clicked}>
-            <p>{item.description}</p>
-            <StyledIcons>
-              <Favourite liked />
-              <Vote />
-            </StyledIcons>
-          </AccordionContent>
-        </AccordionDiv>
-      ))}
-    </span>
+    <AccordionDiv>
+      <AccordionHead onClick={handleClick}>
+        <div>
+          <BadgeButton>{item.name.toUpperCase()}</BadgeButton>
+          <StyledArrow clicked={clicked} />
+        </div>
+        <div>
+          <UseIcons />
+        </div>
+      </AccordionHead>
+      <AccordionContent key={index} clicked={clicked}>
+        <span>{item.description}</span>
+        <p>{item.recipe}</p>
+        <StyledIcons>
+          <Favourite liked />
+          <Vote />
+        </StyledIcons>
+      </AccordionContent>
+    </AccordionDiv>
   );
 }
-
-export default Accordion;
 
 {
   /* <span>
