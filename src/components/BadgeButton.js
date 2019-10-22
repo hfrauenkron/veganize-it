@@ -1,8 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
-// import { NavLink } from "react-router-dom";
-// import { data } from "../api/data";
 
 const BadgeButtonSpan = styled.span`
   border-radius: 5px;
