@@ -1,15 +1,25 @@
 import React from "react";
 import Accordion from "./Accordion";
-import { data } from "../api/data";
 
-export default function AccordionList({ handleClick }) {
-  let output = [];
-  data.map(item => output.push(...item.alt));
-  console.log(output);
+export default function AccordionList({ alt }) {
+  // let output = [];
+  // data.map(item => output.push(...item.alt));
+
   return (
     <>
-      <Accordion handleClick={handleClick} />
+      {alt.map(item => (
+        <Accordion key={item.name} {...item} />
+      ))}
     </>
   );
 }
-// {data[1].alt.map((item, index) => (     ))}
+
+// export default function AccordionList({ handleClick }) {
+//   return (
+//     <>
+//       {data[0].alt.map((item, index) => (
+//         <Accordion handleClick={handleClick} item={item} key={index} />
+//       ))}
+//     </>
+//   );
+// }

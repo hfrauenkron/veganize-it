@@ -19,12 +19,12 @@ const StyledLink = styled(Link)`
   color: #242623;
 `;
 
-export default function BadgeButtonList({ data, handleClick }) {
+export default function BadgeButtonList({ data }) {
   return (
     <BadgeButtonSection>
       {data.map(item => {
         return (
-          <BadgeButton list light key={item.id} onClick={handleClick}>
+          <BadgeButton list light key={item.id}>
             <StyledLink to={`/home/${item.name}`}>
               {item.name.toUpperCase()}
             </StyledLink>

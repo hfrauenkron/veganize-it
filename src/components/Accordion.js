@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import ArrowIconDown from "../icons/ArrowIconDown";
 import BadgeButton from "./BadgeButton";
-import UseIcons from "./UseIcons";
 import Favourite from "./Favourite";
 import Vote from "./Vote";
 
@@ -55,7 +54,7 @@ const AccordionContent = styled.div`
   transition: max-height 0.6s ease;
 `;
 
-export default function Accordion({ item, index }) {
+export default function Accordion({ name, description, use, recipe }) {
   const [clicked, setClicked] = useState(false);
   function handleClick() {
     setClicked(!clicked);
@@ -64,16 +63,14 @@ export default function Accordion({ item, index }) {
     <AccordionDiv>
       <AccordionHead onClick={handleClick}>
         <div>
-          <BadgeButton>{item.name.toUpperCase()}</BadgeButton>
+          <BadgeButton>{name.toUpperCase()}</BadgeButton>
           <StyledArrow clicked={clicked} />
         </div>
-        <div>
-          <UseIcons />
-        </div>
+        <div>{use}</div>
       </AccordionHead>
-      <AccordionContent key={index} clicked={clicked}>
-        <span>{item.description}</span>
-        <p>{item.recipe}</p>
+      <AccordionContent clicked={clicked}>
+        <span>{description}</span>
+        <p>{recipe}</p>
         <StyledIcons>
           <Favourite liked />
           <Vote />
