@@ -14,7 +14,7 @@ import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
 
 const HeaderDiv = styled.div`
-  z-index: 100;
+  z-index: 1;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -73,7 +73,7 @@ const StyledCloseMenuIcon = styled.div`
     props.clicked
       ? css`
           display: block;
-          margin-left: 5.5px;
+          margin: 0 0 4px 5.5px;
           cursor: pointer;
         `
       : css`
@@ -90,6 +90,7 @@ const StyledMenuIcon = styled.div`
       : css`
           display: block;
           cursor: pointer;
+          margin: 0 0 5px 0;
         `}
 `;
 

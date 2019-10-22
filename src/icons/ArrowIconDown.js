@@ -1,12 +1,13 @@
 import React from "react";
 
-export default function ArrowIconDown() {
+export default function ArrowIconDown({ className }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="15.207"
       height="8.878"
       viewBox="0 0 15.207 8.878"
+      className={className}
     >
       <path
         id="Icon_awesome-sort-down-2"

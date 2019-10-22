@@ -24,7 +24,7 @@ const HeadTitle = styled.h1`
   ${props =>
     props.link
       ? css`
-          text-decoration: none;
+          text-decoration: underline;
           cursor: pointer;
         `
       : css`
