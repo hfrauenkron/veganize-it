@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "../icons/SearchIcon";
-import { content } from "../api/content";
 
 const StyledSearchbar = styled.div`
   display: flex;

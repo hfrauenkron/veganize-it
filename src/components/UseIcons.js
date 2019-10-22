@@ -8,8 +8,6 @@ import PropTypes from "prop-types";
 const WrapperDiv = styled.div`
   display: flex;
   align-items: center;
-  border: none;
-  margin: 5px;
 `;
 
 const StyledCoffeeIcon = styled(CoffeeIcon)`
@@ -33,7 +31,7 @@ export default function UseIcons({ assigned }) {
     <WrapperDiv>
       <StyledCoffeeIcon assigned={assigned} />
       <StyledBakingIcon assigned={assigned} />
-      <StyledCookingIcon />
+      <StyledCookingIcon assigned={assigned} />
     </WrapperDiv>
   );
 }

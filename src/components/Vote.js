@@ -57,9 +57,18 @@ export default function Vote() {
     setCount(count + 1);
   }
 
+  function ResetState() {
+    setClick(false);
+  }
+
   return (
     <WrapperDiv>
-      <JumpingLike onClick={handleClickCount} click={click}>
+      <JumpingLike
+        onMouseDown={handleClickCount}
+        onMouseLeave={ResetState}
+        onTouchEnd={ResetState}
+        click={click}
+      >
         <LikeIcon />
       </JumpingLike>
       <StyledLikeCount>{count}</StyledLikeCount>

@@ -1,6 +1,5 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import BigIconsGrouped from "../icons/BigIconsGrouped";
 import Title from "./Title";
 import AlmondIcon from "../icons/AlmondIcon";
 import TomatoIcon from "../icons/TomatoIcon";

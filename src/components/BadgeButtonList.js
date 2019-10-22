@@ -1,25 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import BadgeButton from "./BadgeButton";
+import { Link } from "react-router-dom";
 
 const BadgeButtonSection = styled.section`
   display: flex;
   flex-direction: row;
   width: 370px;
   height: auto;
-  padding-left: 8px;
+  padding-left: 10px;
   justify-content: flex-start;
   align-items: center;
   flex-flow: wrap;
 `;
 
-export default function BadgeButtonList({ content }) {
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #242623;
+`;
+
+export default function BadgeButtonList({ data, handleClick }) {
   return (
     <BadgeButtonSection>
-      {content.map(item => {
+      {data.map(item => {
         return (
-          <BadgeButton list light content={content}>
-            {item.toUpperCase()}
+          <BadgeButton list light key={item.id} onClick={handleClick}>
+            <StyledLink to={`/home/${item.name}`}>
+              {item.name.toUpperCase()}
+            </StyledLink>
           </BadgeButton>
         );
       })}
