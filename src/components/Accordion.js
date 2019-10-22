@@ -79,29 +79,3 @@ export default function Accordion({ name, description, use, recipe }) {
     </AccordionDiv>
   );
 }
-
-// export default function Accordion({ item, index }) {
-//   const [clicked, setClicked] = useState(false);
-//   function handleClick() {
-//     setClicked(!clicked);
-//   }
-//   return (
-//     <AccordionDiv>
-//       <AccordionHead onClick={handleClick}>
-//         <div>
-//           <BadgeButton>{item.name.toUpperCase()}</BadgeButton>
-//           <StyledArrow clicked={clicked} />
-//         </div>
-//         <div>{item.use}</div>
-//       </AccordionHead>
-//       <AccordionContent key={index} clicked={clicked}>
-//         <span>{item.description}</span>
-//         <p>{item.recipe}</p>
-//         <StyledIcons>
-//           <Favourite liked />
-//           <Vote />
-//         </StyledIcons>
-//       </AccordionContent>
-//     </AccordionDiv>
-//   );
-// }
