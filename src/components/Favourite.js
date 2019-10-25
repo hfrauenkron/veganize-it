@@ -28,11 +28,14 @@ const StyledFavouriteIcon = styled(FavouriteIcon)`
         `}
 `;
 
-export default function Favourite() {
+export default function Favourite({ handleSetFavourite }) {
   const [liked, setLiked] = useState(false);
+
   function handleLiked() {
     setLiked(!liked);
+    handleSetFavourite();
   }
+
   return (
     <WrapperDiv onClick={handleLiked}>
       <StyledFavouriteIcon liked={liked} />

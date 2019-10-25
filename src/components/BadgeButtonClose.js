@@ -4,7 +4,7 @@ import CloseButton from "./CloseButton";
 import PropTypes from "prop-types";
 
 const WrapperBadge = styled.div`
-  margin: 25px 10px;
+  margin: 15px 10px;
 `;
 
 const BadgeButtonSpan = styled.span`

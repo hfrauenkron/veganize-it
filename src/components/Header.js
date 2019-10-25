@@ -6,7 +6,6 @@ import {
   HeaderTitle,
   HomeTitle,
   FavouritesTitle,
-  AccountTitle,
   AboutTitle
 } from "../stories/Title.stories";
 import CloseMenuIcon from "../icons/CloseMenuIcon";
@@ -59,8 +58,9 @@ const MenuItemsDiv = styled.div`
           display: flex;
           flex-direction: column;
           align-items: center;
+
           width: 414px;
-          height: 159px;
+          height: 110px;
           text-decoration: none;
         `
       : css`
@@ -95,7 +95,7 @@ const StyledMenuIcon = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  text-decoration: underline;
+  text-decoration: none;
   color: #242623;
 `;
 
@@ -129,7 +129,6 @@ export default function Header() {
           <StyledLink to="/about">
             <AboutTitle />
           </StyledLink>
-          <AccountTitle />
         </MenuItemsDiv>
       </MenuDiv>
     </>
