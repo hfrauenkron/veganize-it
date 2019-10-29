@@ -12,7 +12,7 @@ const StyledSearchbar = styled.div`
   width: 343px;
   box-shadow: 2px 2px 2px #00000029;
   padding-left: 5px;
-  margin: 25px 0 20px 0;
+  margin: 35px 0 20px 0;
   background: #ffffff;
 `;
 

@@ -24,6 +24,7 @@ const WelcomeCardDiv = styled.div`
 const StyledParagraph = styled.p`
   text-align: center;
   margin-top: 8px;
+  font-size: 20px;
 `;
 
 const swing = keyframes`
@@ -54,8 +55,8 @@ const JumpAlmond = styled.span`
 const SwingCashew = styled.span`
   z-index: 1;
   position: absolute;
-  top: 260px;
-  right: 20px;
+  top: 265px;
+  right: 40px;
   animation: ${swing} 1s;
   animation-direction: alternate;
   animation-iteration-count: infinite;

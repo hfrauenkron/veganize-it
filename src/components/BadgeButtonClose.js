@@ -28,12 +28,21 @@ const StyledCloseButton = styled.span`
   cursor: pointer;
 `;
 
-export default function BadgeButtonClose({ children }) {
+export default function BadgeButtonClose({
+  id,
+  children,
+  handleRemoveFavourite
+}) {
+  function handleRemove({ id }) {
+    handleRemoveFavourite(id);
+    console.log("removed");
+  }
+
   return (
     <WrapperBadge>
       <BadgeButtonSpan>
         {children}
-        <StyledCloseButton>
+        <StyledCloseButton onClick={handleRemove}>
           <CloseButton />
         </StyledCloseButton>
       </BadgeButtonSpan>

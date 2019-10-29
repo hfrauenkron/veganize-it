@@ -17,7 +17,7 @@ const StyledFavouriteIcon = styled(FavouriteIcon)`
   margin: 0 5px 5px 0;
   filter: drop-shadow(2px 2px 2px #00000029);
   ${props =>
-    props.liked
+    props.like
       ? css`
           fill: #e44346;
           stroke: #e44346;
@@ -28,17 +28,23 @@ const StyledFavouriteIcon = styled(FavouriteIcon)`
         `}
 `;
 
-export default function Favourite({ handleSetFavourite }) {
-  const [liked, setLiked] = useState(false);
+export default function Favourite({
+  handleSetFavourite,
+  favourites,
+  setFavourites
+}) {
+  const [like, setLike] = useState(false);
 
-  function handleLiked() {
-    setLiked(!liked);
+  function handleLike() {
+    setFavourites(favourites);
+    setLike(!like);
     handleSetFavourite();
+    console.log(!like);
   }
 
   return (
-    <WrapperDiv onClick={handleLiked}>
-      <StyledFavouriteIcon liked={liked} />
+    <WrapperDiv onClick={handleLike}>
+      <StyledFavouriteIcon like={like} favourites={favourites} />
     </WrapperDiv>
   );
 }

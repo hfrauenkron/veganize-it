@@ -1,0 +1,268 @@
+{
+  "data": [
+    {
+      "name": "Dairy Milk",
+      "id": 1,
+      "alt": [
+        {
+          "name": "Soy Milk",
+          "description": "Widely available and versatile. It can be used in sweet and savory dishes as well as coffee.",
+          "use": "<UseIconsMilk coffee baking cooking />"
+        },
+        {
+          "name": "Oat Milk",
+          "description": "Great for breakfast cereals, baking and coffee. Oat Milk is healthy, cheap and easy to make at home, with only two ingredients.",
+          "recipe": "Recipe: 1 part oats and 2 parts water. Blend, strain and store refridgerated for up to 5 days.",
+          "use": "<UseIconsMilk coffee baking />"
+        },
+        {
+          "name": "Almond Milk",
+          "description": "Great for breakfast cereals, baking and coffee. Almond Milk has a mild nutty flavor, is healthy and easy to make at home, with only two ingredients.",
+          "recipe": "Recipe: 1 part almonds and 2 parts water. Blend, strain and store refridgerated for up to 5 days.",
+          "use": " <UseIconsMilk coffee baking />"
+        },
+        {
+          "name": "Cashew Milk",
+          "description": "Great for breakfast cereals, baking and coffee. Cashew Milk has a distinct nutty flavor, is healthy and easy to make at home, with only two ingredients.",
+          "recipe": "Recipe: 1 part cashews and 2 parts water. Blend, strain and store refridgerated for up to 5 days.",
+          "use": "<UseIconsMilk baking cooking />"
+        }
+      ]
+    },
+    {
+      "name": "Egg",
+      "id": 2,
+      "alt": [
+        {
+          "name": "Chia Egg",
+          "description": "Raw egg(white) consistency, great for baking, very easy to make.",
+          "recipe": "Recipe: 1 tbsp chia seeds, 2 tbsp water, let sit for 15minutes before use.",
+          "use": "<UseIcons raw baking />"
+        },
+        {
+          "name": "Flax Egg",
+          "description": "Raw egg(white) consistency, very easy to make and affordable.",
+          "recipe": "Recipe: 1 tbsp ground fax seeds, 2 tbsp water, let sit for 15minutes before use.",
+          "use": "<UseIcons baking />"
+        },
+        {
+          "name": "Aquafaba",
+          "description": "Chickpea water that can be whipped like egg white.",
+          "recipe": "Recipe: Whisk with a handheld mixer until fluffy.",
+          "use": "<UseIcons raw baking />"
+        },
+        {
+          "name": "Chickpea Flour",
+          "description": "A great way to replace egg in omelettes, quiche or tarte.",
+          "recipe": "Recipe: 1 part chickpea flour, 2 parts nut milk or water. Mix well and add up to 4 parts vegetable stock, cook until thickened.",
+          "use": "<UseIcons baking cooking />"
+        },
+        {
+          "name": "Silken Tofu",
+          "description": "A great way to replace egg in desserts, quiche or tarte.",
+          "recipe": "Recipe: Blend and thin out with water if needed.",
+          "use": "<UseIcons raw baking cooking />"
+        }
+      ]
+    },
+    {
+      "name": "Butter",
+      "id": 3,
+      "alt": [
+        {
+          "name": "Margerine",
+          "description": "Diary free margerines, made of sunflower or rapeseed oil for example, are great alternatives for cooking and baking.",
+          "recipe": ""
+        },
+        {
+          "name": "Vegan Butter",
+          "description": "Vegan butter is a great alternative for raw uses - like on bread.",
+          "recipe": ""
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cream",
+      "alt": [
+        {
+          "name": "Coconut Cream",
+          "description": "Because of it's naturally high fat content, coconut cream is a great alternative for diary cream. Serve with desserts or use for cooking.",
+          "recipe": "Recipe: Chill a can of full-fat coconut milk until firm. Pour away the liquid and whip the remains with a handheld mixer."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Buttermilk",
+      "alt": [
+        {
+          "name": "Vegan Buttermilk",
+          "description": "An easy to make, inexpensive and healthy alternative. Great for baking and sweet dishes like pancakes.",
+          "recipe": "Recipe: 250mL of nut milk, 1 tbsp of apple cider vinegar or fresh lemon juice. Let sit for 15minutes, stirring occasionally."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cheese",
+      "alt": [
+        {
+          "name": "Vegan Cheese",
+          "description": "There is a wide variety of plant-based 'cheeses', sliced or shredded, that look, taste and melt like dairy.",
+          "recipe": ""
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Gelatin",
+      "alt": [
+        {
+          "name": "Agar Agar",
+          "description": "Gained from algae, it has a neutral taste and the same thickening and binding properties as the bone-marrow substract gelatin. It is great for baking, jelly or candy making.",
+          "recipe": ""
+        },
+        {
+          "name": "Carob Bean Gum",
+          "description": "",
+          "recipe": ""
+        },
+        {
+          "name": "Potatoe Starch",
+          "description": "",
+          "recipe": ""
+        },
+        {
+          "name": "Corn Starch",
+          "description": "",
+          "recipe": ""
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Sour Cream",
+      "alt": [
+        {
+          "name": "Cashew Sour Cream",
+          "description": "A rich, hearty alternative - easily made and customized.",
+          "recipe": "Recipe: 150g cashews, soaked for 2-3hours, 2 tbsp fresh lemon juice, 1 tsp apple cider vinegar, 1 tsp garlic powder and a dash of salt. Blend and store refridgerated."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Bacon",
+      "alt": [
+        { "name": "Smoked Tofu", "description": "", "recipe": "" },
+        { "name": "Smoked Seitan", "description": "", "recipe": "" }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Scrambled Egg",
+      "alt": [{ "name": "Scrambled Tofu", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 11,
+      "name": "Yoghurt",
+      "alt": [
+        { "name": "Soy Yoghurt", "description": "", "recipe": "" },
+        { "name": "Coconut Yoghurt", "description": "", "recipe": "" },
+        { "name": "Almond Yoghurt", "description": "", "recipe": "" }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Mayonnaise",
+      "alt": [{ "name": "Vegan Mayonnaise", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 13,
+      "name": "Chicken Stock",
+      "alt": [{ "name": "Vegetable Stock", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 14,
+      "name": "Beef Stock",
+      "alt": [{ "name": "Vegetable Stock", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 15,
+      "name": "Condensed Milk",
+      "alt": [{ "name": "Y", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 16,
+      "name": "Worcestershire Sauce",
+      "alt": [{ "name": "Y", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 17,
+      "name": "Parmesan",
+      "alt": [{ "name": "Vegan Parmesan", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 18,
+      "name": "Cream Cheese",
+      "alt": [
+        { "name": "Cashew Cream Cheese", "description": "", "recipe": "" }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Milk Chocolate",
+      "alt": [
+        { "name": "Dark Chocolate", "description": "", "recipe": "" },
+        { "name": "Vegan Chocolate", "description": "", "recipe": "" }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Honey",
+      "alt": [
+        { "name": "Maple Syrup", "description": "", "recipe": "" },
+        { "name": "Agave Syrup", "description": "", "recipe": "" },
+        { "name": "Raw Brown Sugar", "description": "", "recipe": "" }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Sugar",
+      "alt": [
+        { "name": "Maple Syrup", "description": "", "recipe": "" },
+        { "name": "Agave Syrup", "description": "", "recipe": "" },
+        { "name": "Raw Brown Sugar", "description": "", "recipe": "" }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Pulled Pork",
+      "alt": [{ "name": "Pulled Jackfruit", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 23,
+      "name": "Pulled Chicken",
+      "alt": [{ "name": "Pulled Jackfruit", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 24,
+      "name": "Salmon",
+      "alt": [
+        { "name": "Marinated Carrot", "description": "", "recipe": "" },
+        { "name": "Vegan Lox", "description": "", "recipe": "" }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Ground Beef",
+      "alt": [{ "name": "Minced Tofu", "description": "", "recipe": "" }]
+    },
+    {
+      "id": 26,
+      "name": "Gummibears",
+      "alt": [{ "name": "Vegan Gummibears", "description": "", "recipe": "" }]
+    }
+  ]
+}
