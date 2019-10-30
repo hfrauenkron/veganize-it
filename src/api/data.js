@@ -1,3 +1,7 @@
+import React from "react";
+import UseIconsMilk from "../components/UseIconsMilk";
+import UseIcons from "../components/UseIcons";
+
 export const data = [
   {
     name: "Dairy Milk",
@@ -5,29 +9,37 @@ export const data = [
     alt: [
       {
         name: "Soy Milk",
+        id: 1,
         description:
-          "Widely available and versatile. It can be used in sweet and savory dishes as well as coffee."
+          "Widely available and versatile. It can be used in sweet and savory dishes as well as coffee.",
+        use: <UseIconsMilk raw coffee baking cooking />
       },
       {
         name: "Oat Milk",
+        id: 2,
         description:
           "Great for breakfast cereals, baking and coffee. Oat Milk is healthy, cheap and easy to make at home, with only two ingredients.",
         recipe:
-          "Recipe: 1 part oats and 2 parts water. Blend, strain and store refridgerated for up to 5 days."
+          "Recipe: 1 part oats and 2 parts water. Blend, strain and store refridgerated for up to 5 days.",
+        use: <UseIconsMilk raw coffee baking />
       },
       {
         name: "Almond Milk",
+        id: 3,
         description:
           "Great for breakfast cereals, baking and coffee. Almond Milk has a mild nutty flavor, is healthy and easy to make at home, with only two ingredients.",
         recipe:
-          "Recipe: 1 part almonds and 2 parts water. Blend, strain and store refridgerated for up to 5 days."
+          "Recipe: 1 part almonds and 2 parts water. Blend, strain and store refridgerated for up to 5 days.",
+        use: <UseIconsMilk raw coffee baking />
       },
       {
         name: "Cashew Milk",
+        id: 4,
         description:
           "Great for breakfast cereals, baking and coffee. Cashew Milk has a distinct nutty flavor, is healthy and easy to make at home, with only two ingredients.",
         recipe:
-          "Recipe: 1 part cashews and 2 parts water. Blend, strain and store refridgerated for up to 5 days."
+          "Recipe: 1 part cashews and 2 parts water. Blend, strain and store refridgerated for up to 5 days.",
+        use: <UseIconsMilk raw baking cooking />
       }
     ]
   },
@@ -40,31 +52,36 @@ export const data = [
         description:
           "Raw egg(white) consistency, great for baking, very easy to make.",
         recipe:
-          "Recipe: 1 tbsp chia seeds, 2 tbsp water, let sit for 15minutes before use."
+          "Recipe: 1 tbsp chia seeds, 2 tbsp water, let sit for 15minutes before use.",
+        use: <UseIcons raw baking />
       },
       {
         name: "Flax Egg",
         description:
           "Raw egg(white) consistency, very easy to make and affordable.",
         recipe:
-          "Recipe: 1 tbsp ground fax seeds, 2 tbsp water, let sit for 15minutes before use."
+          "Recipe: 1 tbsp ground fax seeds, 2 tbsp water, let sit for 15minutes before use.",
+        use: <UseIcons baking />
       },
       {
         name: "Aquafaba",
         description: "Chickpea water that can be whipped like egg white.",
-        recipe: "Recipe: Whisk with a handheld mixer until fluffy."
+        recipe: "Recipe: Whisk with a handheld mixer until fluffy.",
+        use: <UseIcons raw baking />
       },
       {
         name: "Chickpea Flour",
         description:
           "A great way to replace egg in omelettes, quiche or tarte.",
         recipe:
-          "Recipe: 1 part chickpea flour, 2 parts nut milk or water. Mix well and add up to 4 parts vegetable stock, cook until thickened."
+          "Recipe: 1 part chickpea flour, 2 parts nut milk or water. Mix well and add up to 4 parts vegetable stock, cook until thickened.",
+        use: <UseIcons baking cooking />
       },
       {
         name: "Silken Tofu",
         description: "A great way to replace egg in desserts, quiche or tarte.",
-        recipe: "Recipe: Blend and thin out with water if needed."
+        recipe: "Recipe: Blend and thin out with water if needed.",
+        use: <UseIcons raw baking cooking />
       }
     ]
   },

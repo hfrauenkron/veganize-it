@@ -11,7 +11,7 @@ const AccordionDiv = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: -10px;
-  padding: 15px;
+  padding: 15px 7px 15px 15px;
   width: 379px;
   border-radius: 10px 10px 0 0;
   box-shadow: 2px -2px 2px #00000029;
@@ -54,11 +54,31 @@ const AccordionContent = styled.div`
   transition: max-height 0.6s ease;
 `;
 
-export default function Accordion({ name, description, use, recipe }) {
+export default function Accordion({
+  name,
+  description,
+  use,
+  recipe,
+  favourites,
+  setFavourites
+}) {
   const [clicked, setClicked] = useState(false);
   function handleClick() {
     setClicked(!clicked);
   }
+  // let userData = {
+  //   favourite : {name},
+  //   userName : {userName}
+  // }
+
+  let favourite = name;
+
+  function handleSetFavourite() {
+    const favouritesList = [...favourites, favourite];
+    setFavourites(favouritesList);
+    localStorage.setItem("favourites", JSON.stringify(favouritesList));
+  }
+
   return (
     <AccordionDiv>
       <AccordionHead onClick={handleClick}>
@@ -72,7 +92,12 @@ export default function Accordion({ name, description, use, recipe }) {
         <span>{description}</span>
         <p>{recipe}</p>
         <StyledIcons>
-          <Favourite liked />
+          <Favourite
+            like
+            favourites={favourites}
+            setFavourites={setFavourites}
+            handleSetFavourite={handleSetFavourite}
+          />
           <Vote />
         </StyledIcons>
       </AccordionContent>

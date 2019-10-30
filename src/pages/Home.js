@@ -3,7 +3,9 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Searchbar from "../components/Searchbar";
 import BadgeButtonList from "../components/BadgeButtonList";
+// import { getData } from "../api/getData";
 import { data } from "../api/data";
+import SpeechBubble from "../components/SpeechBubble";
 
 const WrapperDiv = styled.div`
   height: 100%;
@@ -13,12 +15,26 @@ const WrapperDiv = styled.div`
 `;
 
 const StyledHeader = styled(Header)`
-  position: absolute;
+  position: relative;
 `;
 
-export default function Home() {
+const StyledSpeechBubble = styled.span`
+  z-index: 100;
+  position: absolute;
+  left: 92px;
+  top: 47px;
+  transform: rotate(5deg);
+`;
+
+export default function Home({ userName }) {
   const [searchValue, setSearchValue] = useState("");
-  // let history = useHistory();
+
+  // const [data, setData] = React.useState([]);
+  // React.useEffect(() => {
+  //   getData().then(fetchedData => {
+  //     setData(fetchedData);
+  //   });
+  // });
 
   const filteredData = data.filter(item =>
     item.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -31,29 +47,11 @@ export default function Home() {
   return (
     <WrapperDiv>
       <StyledHeader />
+      <StyledSpeechBubble>
+        <SpeechBubble userName={userName} />
+      </StyledSpeechBubble>
       <Searchbar onSearch={handleSearch} />
       <BadgeButtonList data={filteredData} />
     </WrapperDiv>
   );
 }
-// {data[0].name.toUpperCase()}
-
-// return (
-//   <WrapperDiv>
-//     <StyledHeader />
-//     <Switch>
-//       <Route exact path="/home">
-//         <Searchbar onSearch={handleSearch} />
-//         <BadgeButtonList data={filteredData} />
-//       </Route>
-//       <Route path="/home/:itemName">
-//         <StyledDiv>
-//           <BadgeButton i={item} light>
-//             {item.name}
-//           </BadgeButton>
-//           <AccordionList />
-//         </StyledDiv>
-//       </Route>
-//     </Switch>
-//   </WrapperDiv>
-// );

@@ -10,7 +10,7 @@ export default createGlobalStyle`
 body {
   width: 100vw;
   height: 100vh;
-  font-size: 20px;
+  font-size: 16px;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   color: #242623;

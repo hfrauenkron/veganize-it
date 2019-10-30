@@ -6,4 +6,4 @@ export default {
 };
 
 export const UseIconsDefault = () => <UseIcons assigned />;
-// export const UseIconsCase = () => <UseIcons assigned />;
+export const UseIconsMilk = () => <UseIcons assigned />;

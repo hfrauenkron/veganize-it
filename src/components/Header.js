@@ -11,9 +11,9 @@ import {
 import CloseMenuIcon from "../icons/CloseMenuIcon";
 import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
+import SpeechBubble from "../components/SpeechBubble";
 
 const HeaderDiv = styled.div`
-  z-index: 1;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -99,6 +99,11 @@ const StyledLink = styled(Link)`
   color: #242623;
 `;
 
+// const StyledSpeechBubble = styled.span`
+//   position: absolute;
+//   bottom: -10;
+// `;
+
 export default function Header() {
   const [clicked, setClicked] = useState(false);
   return (
@@ -107,6 +112,9 @@ export default function Header() {
         <StyledLink to="/home">
           <LogoIcon />
         </StyledLink>
+        {/* <StyledSpeechBubble>
+          <SpeechBubble />
+        </StyledSpeechBubble> */}
         <HeaderTitle />
         <StyledCloseMenuIcon
           onClick={() => setClicked(false)}

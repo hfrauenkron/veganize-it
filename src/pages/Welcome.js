@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import WelcomeCard from "../components/WelcomeCard";
-import Login from "../components/Login";
-import { Redirect } from "react-router-dom";
+import EnterUserName from "../components/EnterUserName";
 
 const WrapperDiv = styled.div`
   display: flex;
@@ -10,19 +9,19 @@ const WrapperDiv = styled.div`
   align-items: center;
 `;
 
-export default function Welcome() {
-  const [redirect, setRedirect] = useState(false);
-  setTimeout(() => setRedirect(true), 5000);
+export default function Welcome({ setUserName, userName }) {
+  function handleSetUserName() {
+    setUserName(!userName);
+  }
+
   return (
-    <>
-      {redirect ? (
-        <Redirect to="/home" />
-      ) : (
-        <WrapperDiv>
-          <WelcomeCard />
-          <Login />
-        </WrapperDiv>
-      )}
-    </>
+    <WrapperDiv>
+      <WelcomeCard />
+      <EnterUserName
+        userName={userName}
+        onClick={handleSetUserName}
+        setUserName={setUserName}
+      />
+    </WrapperDiv>
   );
 }
