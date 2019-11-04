@@ -1,5 +1,5 @@
 import React from "react";
-import UseIcons from "../components/UseIcons";
+import UseIcons from "../components/UseIconsMilk";
 
 export default {
   title: "UseIcons"

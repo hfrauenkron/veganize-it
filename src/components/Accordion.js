@@ -3,7 +3,10 @@ import styled, { css } from "styled-components";
 import ArrowIconDown from "../icons/ArrowIconDown";
 import BadgeButton from "./BadgeButton";
 import Favourite from "./Favourite";
-import Vote from "./Vote";
+import {
+  getFavouritesFromStorage,
+  setFavouritesToStorage
+} from "../api/storage";
 
 const AccordionDiv = styled.div`
   display: flex;
@@ -33,7 +36,7 @@ const StyledIcons = styled.div`
 `;
 
 const StyledArrow = styled(ArrowIconDown)`
-  margin-left: 10px;
+  margin-left: 5px;
   cursor: pointer;
   ${props =>
     props.clicked
@@ -54,29 +57,40 @@ const AccordionContent = styled.div`
   transition: max-height 0.6s ease;
 `;
 
-export default function Accordion({
-  name,
-  description,
-  use,
-  recipe,
-  favourites,
-  setFavourites
-}) {
+const StyledRecipeTitle = styled.h2`
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+`;
+
+export default function Accordion({ id, name, description, use, recipe }) {
+  const [favourites, setFavourites] = useState(getFavouritesFromStorage());
   const [clicked, setClicked] = useState(false);
+  const [liked, setLiked] = useState(false);
+
+  React.useEffect(() => {
+    setFavouritesToStorage(favourites);
+  }, [favourites]);
+
   function handleClick() {
     setClicked(!clicked);
   }
-  // let userData = {
-  //   favourite : {name},
-  //   userName : {userName}
-  // }
 
-  let favourite = name;
+  function handleLiked() {
+    setLiked(!liked);
+    console.log(!liked);
+  }
+
+  // let liked = favourites.find(favourite => favourite.id === id);
+
+  let favourite = { name, id };
 
   function handleSetFavourite() {
-    const favouritesList = [...favourites, favourite];
-    setFavourites(favouritesList);
-    localStorage.setItem("favourites", JSON.stringify(favouritesList));
+    if (
+      !favourites.find(existingFavorite => existingFavorite.id === favourite.id)
+    ) {
+      const favouritesList = [...favourites, favourite];
+      setFavourites(favouritesList);
+    }
   }
 
   return (
@@ -90,15 +104,16 @@ export default function Accordion({
       </AccordionHead>
       <AccordionContent clicked={clicked}>
         <span>{description}</span>
-        <p>{recipe}</p>
+        <StyledRecipeTitle>{recipe.title.toUpperCase()}</StyledRecipeTitle>
+        <p>{recipe.text}</p>
         <StyledIcons>
           <Favourite
-            like
-            favourites={favourites}
-            setFavourites={setFavourites}
-            handleSetFavourite={handleSetFavourite}
+            // liked={liked}
+            onClick={() => {
+              handleSetFavourite();
+              handleLiked(liked);
+            }}
           />
-          <Vote />
         </StyledIcons>
       </AccordionContent>
     </AccordionDiv>

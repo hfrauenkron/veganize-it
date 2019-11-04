@@ -11,12 +11,12 @@ const WrapperDiv = styled.div`
 `;
 
 const StyledRawIcon = styled(RawIcon)`
-  margin: 8px 5px 0px 6px;
+  margin: 8px 1px 0px 6px;
   stroke: ${props => (props.raw ? "#242623" : "#bebebe")};
 `;
 
 const StyledBakingIcon = styled(BakingIcon)`
-  margin: 5px 3px 10px 5px;
+  margin: 5px 1px 10px 5px;
   fill: ${props => (props.baking ? "#242623" : "#bebebe")};
   stroke: ${props => (props.baking ? "#242623" : "#bebebe")};
 `;

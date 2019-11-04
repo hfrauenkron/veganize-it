@@ -14,6 +14,6 @@ export const AccountTitle = () => <Title inactive>ACCOUNT</Title>;
 export const AboutTitle = () => <Title>ABOUT</Title>;
 
 export const SkipTitle = () => <Title link>SKIP</Title>;
-export const StartTitle = () => <Title link>START</Title>;
+export const StartTitle = () => <Title>START</Title>;
 export const NameTitle = () => <Title>WHAT'S YOUR NAME?</Title>;
 export const RegisterTitle = () => <Title link>REGISTER</Title>;

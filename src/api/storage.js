@@ -1,6 +1,6 @@
 export function getFavouritesFromStorage() {
   try {
-    const favourites = localStorage.getItem("reports");
+    const favourites = localStorage.getItem("favourites");
     const parsedFavourites = JSON.parse(favourites);
     return parsedFavourites || [];
   } catch {
@@ -8,8 +8,8 @@ export function getFavouritesFromStorage() {
   }
 }
 
-export function setFavouritesToStorage(string) {
-  localStorage.setItem("favourites", JSON.stringify(string));
+export function setFavouritesToStorage(newFavourites) {
+  localStorage.setItem("favourites", JSON.stringify(newFavourites));
 }
 
 export function getUserNameFromStorage() {

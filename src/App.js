@@ -7,12 +7,7 @@ import Home from "./pages/Home";
 import Favourites from "./pages/Favourites";
 import About from "./pages/About";
 import HomeContent from "./pages/HomeContent";
-import {
-  getFavouritesFromStorage,
-  setFavouritesToStorage,
-  getUserNameFromStorage,
-  setUserNameToStorage
-} from "./api/storage";
+import { getUserNameFromStorage, setUserNameToStorage } from "./api/storage";
 import { data } from "./api/data";
 
 const Container = styled.div`
@@ -23,20 +18,11 @@ const Container = styled.div`
 `;
 
 function App() {
-  const [favourites, setFavourites] = useState(getFavouritesFromStorage());
   const [userName, setUserName] = useState(getUserNameFromStorage());
-
-  useEffect(() => {
-    setFavouritesToStorage(favourites);
-  }, [favourites]);
 
   useEffect(() => {
     setUserNameToStorage(userName);
   }, [userName]);
-
-  const handleRemoveFavourite = id => {
-    setFavourites(favourites.filter(favourite => favourite.id !== id));
-  };
 
   return (
     <Container>
@@ -58,23 +44,11 @@ function App() {
         <Route
           path="/home/:itemName"
           exact
-          component={() => (
-            <HomeContent
-              userName={userName}
-              setFavourites={setFavourites}
-              favourites={favourites}
-            />
-          )}
+          component={props => <HomeContent {...props} />}
         />
         <Route
           path="/favourites"
-          component={() => (
-            <Favourites
-              data={data}
-              favouriteData={favourites}
-              handleRemoveFavourite={handleRemoveFavourite}
-            />
-          )}
+          component={() => <Favourites data={data} />}
         />
         <Route path="/about" component={About} />
       </Router>

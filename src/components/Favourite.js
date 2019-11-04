@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import FavouriteIcon from "../icons/FavouriteIcon";
 
@@ -17,7 +17,7 @@ const StyledFavouriteIcon = styled(FavouriteIcon)`
   margin: 0 5px 5px 0;
   filter: drop-shadow(2px 2px 2px #00000029);
   ${props =>
-    props.like
+    props.liked
       ? css`
           fill: #e44346;
           stroke: #e44346;
@@ -28,23 +28,10 @@ const StyledFavouriteIcon = styled(FavouriteIcon)`
         `}
 `;
 
-export default function Favourite({
-  handleSetFavourite,
-  favourites,
-  setFavourites
-}) {
-  const [like, setLike] = useState(false);
-
-  function handleLike() {
-    setFavourites(favourites);
-    setLike(!like);
-    handleSetFavourite();
-    console.log(!like);
-  }
-
+export default function Favourite({ onClick, liked }) {
   return (
-    <WrapperDiv onClick={handleLike}>
-      <StyledFavouriteIcon like={like} favourites={favourites} />
+    <WrapperDiv onClick={onClick}>
+      <StyledFavouriteIcon liked={liked} />
     </WrapperDiv>
   );
 }

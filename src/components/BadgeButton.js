@@ -6,10 +6,9 @@ const BadgeButtonSpan = styled.span`
   border-radius: 5px;
   padding: 4px 10px 3px 10px;
   border: none;
-
   font-family: "Fira Sans", sans-serif;
   font-weight: 900;
-  font-size: 21px;
+  font-size: 20px;
   ${props =>
     props.light
       ? css`

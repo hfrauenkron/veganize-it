@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import ArrowIconDown from "../icons/ArrowIconDown";
-import { Link } from "react-router-dom";
+
 
 const WrapperBadge = styled.div`
   display: flex;
