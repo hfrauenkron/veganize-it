@@ -7,7 +7,7 @@ const WrapperDiv = styled.div`
   align-items: center;
   font-family: "Roboto", sans-serif;
   font-weight: medium;
-  font-size: 20px;
+  font-size: 1.3rem;
   border: none;
   color: #242623;
 `;

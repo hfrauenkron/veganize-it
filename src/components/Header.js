@@ -26,7 +26,6 @@ const HeaderDiv = styled.div`
   border: none;
   font-family: "Fira Sans", sans-serif;
   font-weight: 900;
-  font-size: 34px;
   background: #edffe6;
   color: #242623;
   box-shadow: none;

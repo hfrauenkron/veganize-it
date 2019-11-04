@@ -24,7 +24,7 @@ const WelcomeCardDiv = styled.div`
 const StyledParagraph = styled.p`
   text-align: center;
   margin-top: 8px;
-  font-size: 20px;
+  font-size: 1.2rem;
 `;
 
 const swing = keyframes`

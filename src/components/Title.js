@@ -19,15 +19,15 @@ const HeadTitle = styled.h1`
         `};
   ${props => {
     if (props.boldHeadline) {
-      return `font-size: 52px;`;
+      return `font-size: 3.5rem;`;
     } else if (props.headerHeadline) {
-      return `font-size: 34px; margin: 0 30px 0 0;
+      return `font-size: 2.5rem; margin: 0 30px 0 0;
         `;
     } else if (props.headline) {
-      return `font-size: 21px; margin: 20px;
+      return `font-size: 1.3rem; margin: 20px;
         `;
     } else {
-      return `font-size: 21px;`;
+      return `font-size: 1.3rem;`;
     }
   }};
   ${props =>

@@ -26,7 +26,7 @@ const StyledLogin = styled.input`
   :focus {
     outline: none;
   }
-  font-size: 20px;
+  font-size: 1.3rem;
 `;
 
 const StyledTitleBottom = styled.span`
@@ -36,7 +36,7 @@ const StyledTitleBottom = styled.span`
   align-items: center;
   margin: 10px 0 -10px;
   padding-right: 10px;
-  font-size: 21px;
+  font-size: 1.3rem;
 `;
 
 const StyledTitleTop = styled.span`
