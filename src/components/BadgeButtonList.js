@@ -25,7 +25,7 @@ export default function BadgeButtonList({ data }) {
       {data.map(item => {
         return (
           <BadgeButton list light key={item.id}>
-            <StyledLink to={`/home/${item.name}`}>
+            <StyledLink to={`/home/${item.name.toLowerCase()}`}>
               {item.name.toUpperCase()}
             </StyledLink>
           </BadgeButton>

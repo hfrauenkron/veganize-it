@@ -15,8 +15,7 @@ const CardDiv = styled.div`
   height: 100%;
   border: none;
   background: #edffe6;
-  box-shadow: 2px 2px 2px #00000029;
-  /* border-radius: 10px; */
+  /* box-shadow: 2px 2px 2px #00000029; */
   margin: 30px 20px 0px;
   padding: 10px 20px 15px 20px;
 `;

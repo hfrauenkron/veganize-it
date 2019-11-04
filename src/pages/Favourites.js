@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Title from "../components/Title";
 import BadgeButtonClose from "../components/BadgeButtonClose";
 import { Link } from "react-router-dom";
+import Favourite from "../components/Favourite";
+import {
+  getFavouritesFromStorage,
+  setFavouritesToStorage
+} from "../api/storage";
 
 const WrapperDiv = styled.div`
   display: flex;
@@ -23,28 +28,43 @@ const StyledLink = styled(Link)`
   color: #fff;
 `;
 
-export default function Favourites({
-  favouriteData,
-  data,
-  handleRemoveFavourite
-}) {
-  const id = data.find(item => item.id && item.name);
+const StyledSpan = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export default function Favourites({ data }) {
+  const [favourites, setFavourites] = useState(getFavouritesFromStorage());
+
+  React.useEffect(() => {
+    setFavouritesToStorage(favourites);
+  }, [favourites]);
+
+  const handleRemoveFavourite = id => {
+    setFavourites(favourites.filter(favourite => favourite.id === id));
+  };
+
   return (
     <WrapperDiv>
       <Header />
       <Title headline>FAVOURITES</Title>
       <BadgeButtonList>
-        {favouriteData.map(favouriteItem => (
-          <BadgeButtonClose
-            id={id}
-            handleRemoveFavourite={handleRemoveFavourite}
-          >
+        {favourites.map(favourite => (
+          <BadgeButtonClose key={favourite.id} onClick={handleRemoveFavourite}>
             <StyledLink to={`/home/${data.name}`}>
-              {favouriteItem.toUpperCase()}
+              {favourite.name.toUpperCase()}
             </StyledLink>
           </BadgeButtonClose>
         ))}
       </BadgeButtonList>
+      <StyledSpan>
+        <p>Save your plant-based favourites here, by clicking the</p>
+        &nbsp;
+        <span>
+          <Favourite />
+        </span>
+      </StyledSpan>
     </WrapperDiv>
   );
 }

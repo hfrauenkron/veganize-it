@@ -6,12 +6,13 @@ import {
   HeaderTitle,
   HomeTitle,
   FavouritesTitle,
-  AboutTitle
+  AboutTitle,
+  StartTitle
 } from "../stories/Title.stories";
 import CloseMenuIcon from "../icons/CloseMenuIcon";
 import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
-import SpeechBubble from "../components/SpeechBubble";
+// import SpeechBubble from "../components/SpeechBubble";
 
 const HeaderDiv = styled.div`
   position: relative;
@@ -58,9 +59,8 @@ const MenuItemsDiv = styled.div`
           display: flex;
           flex-direction: column;
           align-items: center;
-
           width: 414px;
-          height: 110px;
+          height: 135px;
           text-decoration: none;
         `
       : css`
@@ -99,11 +99,6 @@ const StyledLink = styled(Link)`
   color: #242623;
 `;
 
-// const StyledSpeechBubble = styled.span`
-//   position: absolute;
-//   bottom: -10;
-// `;
-
 export default function Header() {
   const [clicked, setClicked] = useState(false);
   return (
@@ -112,9 +107,6 @@ export default function Header() {
         <StyledLink to="/home">
           <LogoIcon />
         </StyledLink>
-        {/* <StyledSpeechBubble>
-          <SpeechBubble />
-        </StyledSpeechBubble> */}
         <HeaderTitle />
         <StyledCloseMenuIcon
           onClick={() => setClicked(false)}
@@ -128,6 +120,9 @@ export default function Header() {
       </HeaderDiv>
       <MenuDiv clicked={clicked}>
         <MenuItemsDiv clicked={clicked}>
+          <StyledLink to="/">
+            <StartTitle />
+          </StyledLink>
           <StyledLink to="/home">
             <HomeTitle />
           </StyledLink>
