@@ -15,7 +15,7 @@ const BadgeButtonSpan = styled.span`
   box-shadow: 2px 2px 2px #00000029;
   font-family: "Fira Sans", sans-serif;
   font-weight: 900;
-  font-size: 21px;
+  font-size: 1.3rem;
   background: #242623;
   color: #ffffff;
   cursor: pointer;

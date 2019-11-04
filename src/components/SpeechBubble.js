@@ -5,8 +5,6 @@ export default function SpeechBubble({ userName }) {
   const StyledSpeechBubble = styled.span`
     background: #fff;
     padding: 8px 10px;
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
     text-align: center;
     position: relative;
     border-radius: 5px;

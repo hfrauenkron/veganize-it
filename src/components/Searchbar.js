@@ -25,7 +25,7 @@ const StyledInput = styled.input`
   :focus {
     outline: none;
   }
-  font-size: 20px;
+  font-size: 1.3rem;
   padding-left: 10px;
   border: none;
   width: 290px;

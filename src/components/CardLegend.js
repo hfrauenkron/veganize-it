@@ -10,7 +10,7 @@ const CardDiv = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  font-size: 12px;
+  font-size: 0.75rem;
   width: 379px;
   height: 100%;
   border: none;

@@ -59,7 +59,7 @@ const AccordionContent = styled.div`
 
 const StyledRecipeTitle = styled.h2`
   font-family: "Fira Sans", sans-serif;
-  font-size: 20px;
+  font-size: 1.3rem;
 `;
 
 export default function Accordion({ id, name, description, use, recipe }) {
