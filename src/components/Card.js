@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const CardDiv = styled.div`
   display: flex;
@@ -19,3 +20,7 @@ const CardDiv = styled.div`
 export default function Card({ children }) {
   return <CardDiv>{children}</CardDiv>;
 }
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired
+};

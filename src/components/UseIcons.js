@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import BakingIcon from "../icons/BakingIcon";
 import CookingIcon from "../icons/CookingIcon";
-import PropTypes from "prop-types";
 import RawIcon from "../icons/RawIcon";
 
 const WrapperDiv = styled.div`
@@ -37,5 +37,7 @@ export default function UseIcons({ baking, cooking, raw }) {
 }
 
 UseIcons.propTypes = {
-  assigned: PropTypes.bool
+  baking: PropTypes.bool,
+  cooking: PropTypes.bool,
+  raw: PropTypes.bool
 };

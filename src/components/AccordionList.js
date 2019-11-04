@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Accordion from "./Accordion";
 
 export default function AccordionList({ alt, nameClicked }) {
@@ -10,3 +11,8 @@ export default function AccordionList({ alt, nameClicked }) {
     </>
   );
 }
+
+AccordionList.propTypes = {
+  alt: PropTypes.array,
+  nameClicked: PropTypes.bool
+};
