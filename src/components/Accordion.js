@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
 import ArrowIconDown from "../icons/ArrowIconDown";
 import BadgeButton from "./BadgeButton";
 import Favourite from "./Favourite";
@@ -119,3 +120,11 @@ export default function Accordion({ id, name, description, use, recipe }) {
     </AccordionDiv>
   );
 }
+
+Accordion.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  use: PropTypes.object,
+  recipe: PropTypes.object
+};

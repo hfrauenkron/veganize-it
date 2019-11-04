@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "../icons/SearchIcon";
+import PropTypes from "prop-types";
 
 const StyledSearchbar = styled.div`
   display: flex;
@@ -56,3 +57,7 @@ export default function Searchbar({ onSearch }) {
     </StyledSearchbar>
   );
 }
+
+Searchbar.propTypes = {
+  onSearch: PropTypes.func
+};
