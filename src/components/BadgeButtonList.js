@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BadgeButton from "./BadgeButton";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const BadgeButtonSection = styled.section`
   display: flex;
@@ -34,3 +35,7 @@ export default function BadgeButtonList({ data }) {
     </BadgeButtonSection>
   );
 }
+
+BadgeButtonList.propTypes = {
+  data: PropTypes.array
+};

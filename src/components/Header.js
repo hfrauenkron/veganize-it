@@ -12,7 +12,6 @@ import {
 import CloseMenuIcon from "../icons/CloseMenuIcon";
 import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
-// import SpeechBubble from "../components/SpeechBubble";
 
 const HeaderDiv = styled.div`
   position: relative;
@@ -139,5 +138,6 @@ export default function Header() {
 }
 
 Header.propTypes = {
-  clicked: PropTypes.bool
+  clicked: PropTypes.bool,
+  onClick: PropTypes.func
 };

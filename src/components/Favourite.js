@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import FavouriteIcon from "../icons/FavouriteIcon";
+import PropTypes from "prop-types";
 
 const WrapperDiv = styled.div`
   display: flex;
@@ -35,3 +36,8 @@ export default function Favourite({ onClick, liked }) {
     </WrapperDiv>
   );
 }
+
+Favourite.propTypes = {
+  liked: PropTypes.bool,
+  onClick: PropTypes.func
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export default function SpeechBubble({ userName }) {
   const StyledSpeechBubble = styled.span`
@@ -35,3 +36,7 @@ export default function SpeechBubble({ userName }) {
     </StyledSpeechBubble>
   );
 }
+
+SpeechBubble.propTypes = {
+  userName: PropTypes.string
+};

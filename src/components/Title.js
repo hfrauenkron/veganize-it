@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
 
 const HeadTitle = styled.h1`
   z-index: 0;
@@ -63,3 +64,12 @@ export default function Title({
     </HeadTitle>
   );
 }
+
+Title.propTypes = {
+  onClick: PropTypes.func,
+  link: PropTypes.bool,
+  headline: PropTypes.bool,
+  boldHeadline: PropTypes.bool,
+  inactive: PropTypes.bool,
+  children: PropTypes.node.isRequired
+};

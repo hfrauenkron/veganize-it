@@ -42,5 +42,6 @@ export default function BadgeButtonClose({ onClick, children }) {
 }
 
 BadgeButtonClose.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func
 };

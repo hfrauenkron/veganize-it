@@ -44,5 +44,8 @@ export default function UseIconsMilk({ coffee, baking, cooking, raw }) {
 }
 
 UseIconsMilk.propTypes = {
-  assigned: PropTypes.bool
+  coffee: PropTypes.bool,
+  baking: PropTypes.bool,
+  cooking: PropTypes.bool,
+  raw: PropTypes.bool
 };
