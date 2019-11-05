@@ -74,7 +74,7 @@ export default function EnterUserName({ userName, setUserName }) {
       </StyledTitleTop>
       <StyledLogin
         type="text"
-        placeholder="Name"
+        placeholder="What's your name?"
         value={inputValue}
         onChange={handleInput}
         required
