@@ -71,7 +71,7 @@ const StyledCloseMenuIcon = styled.div`
     props.clicked
       ? css`
           display: block;
-          margin: 0 0 4px 5.5px;
+          margin: 5px 0 4px 5.5px;
           cursor: pointer;
         `
       : css`
@@ -88,13 +88,16 @@ const StyledMenuIcon = styled.div`
       : css`
           display: block;
           cursor: pointer;
-          margin: 0 0 5px 0;
+          margin: 5px 0 5px 0;
         `}
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: #242623;
+  :hover {
+    transform: scale(1.2);
+  }
 `;
 
 export default function Header() {
