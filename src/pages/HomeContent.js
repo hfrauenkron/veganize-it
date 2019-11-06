@@ -11,6 +11,8 @@ const WrapperDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const StyledDiv = styled.span`

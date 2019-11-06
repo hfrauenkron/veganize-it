@@ -38,6 +38,6 @@ export default function Favourite({ onClick, liked }) {
 }
 
 Favourite.propTypes = {
-  liked: PropTypes.bool,
+  liked: PropTypes.object,
   onClick: PropTypes.func
 };

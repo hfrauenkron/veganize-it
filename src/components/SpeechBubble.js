@@ -5,25 +5,28 @@ import PropTypes from "prop-types";
 export default function SpeechBubble({ userName }) {
   const StyledSpeechBubble = styled.span`
     background: #fff;
-    padding: 8px 10px;
+    width: 100%;
+    padding: 5px 9px;
     text-align: center;
     position: relative;
     border-radius: 5px;
     box-shadow: 2px 2px 2px #00000029;
+    -webkit-appearance: none;
   `;
 
   const BubbleTriangle = styled.span`
     :before {
-      content: "";
-      width: 0px;
-      height: 0px;
+      content: " ";
       position: absolute;
-      border-left: 10px solid transparent;
-      border-right: 10px solid #fff;
-      border-top: 10px solid #fff;
-      border-bottom: 10px solid transparent;
-      left: -15px;
-      top: 6px;
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-bottom-color: #fff;
+      border-top: 0;
+      margin-left: -47px;
+      margin-top: -12px;
     }
   `;
 

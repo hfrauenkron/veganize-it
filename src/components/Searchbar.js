@@ -9,10 +9,9 @@ const StyledSearchbar = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 8px;
-  height: 49px;
-  width: 343px;
+  min-height: 49px;
+  min-width: 343px;
   box-shadow: 2px 2px 2px #00000029;
-  padding-left: 5px;
   margin: 35px 0 20px 0;
   background: #ffffff;
 `;
@@ -26,11 +25,13 @@ const StyledInput = styled.input`
   :focus {
     outline: none;
   }
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   padding-left: 10px;
+  margin-left: 5px;
   border: none;
-  width: 290px;
+  width: 300px;
   height: 39px;
+  -webkit-appearance: none;
 `;
 
 const StyledSearchIcon = styled.span`

@@ -18,6 +18,7 @@ const CardDiv = styled.div`
   /* box-shadow: 2px 2px 2px #00000029; */
   margin: 30px 20px 0px;
   padding: 10px 20px 15px 20px;
+  -webkit-appearance: none;
 `;
 
 const StyledRawIcon = styled(RawIcon)`
