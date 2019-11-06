@@ -141,7 +141,7 @@ const StyledTitle = styled(Title)`
   }
 `;
 
-export default function Header({ userName, showBubble }) {
+export default function Header({ children, showBubble }) {
   const [clicked, setClicked] = useState(false);
   // const [show, setShow] = useState(false);
   // const node = useRef();
@@ -155,7 +155,7 @@ export default function Header({ userName, showBubble }) {
           <LogoIcon />
         </StyledLink>
         <StyledSpeechBubble showBubble={showBubble}>
-          <SpeechBubble userName={userName} />
+          <SpeechBubble>{children}</SpeechBubble>
         </StyledSpeechBubble>
         <StyledTitle boldHeadline>VEGANIZE IT</StyledTitle>
         <StyledCloseMenuIcon
