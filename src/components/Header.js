@@ -165,5 +165,6 @@ export default function Header() {
 }
 
 Header.propTypes = {
-  clicked: PropTypes.bool
+  clicked: PropTypes.bool,
+  onClick: PropTypes.func
 };

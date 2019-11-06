@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { NameTitle, StartTitle } from "../stories/Title.stories";
+import PropTypes from "prop-types";
 
 const EnterNameDiv = styled.div`
   display: flex;
@@ -60,13 +61,6 @@ export default function EnterUserName({ userName, setUserName }) {
     setInputValue(value);
   }
 
-  // function handleStartClick() {
-  //   const input = value;
-  //   if (input === "") {
-  //     alert;
-  //   } else setUserName(input);
-  // }
-
   return (
     <EnterNameDiv>
       <StyledTitleTop>
@@ -77,13 +71,11 @@ export default function EnterUserName({ userName, setUserName }) {
         placeholder="What's your name?"
         value={inputValue}
         onChange={handleInput}
-        required
       />
       <StyledTitleBottom>
         <StyledLink
           to="/home"
           onClick={() => setUserName((userName = inputValue || "Friend"))}
-          disabled
         >
           <StartTitle />
         </StyledLink>
@@ -92,4 +84,9 @@ export default function EnterUserName({ userName, setUserName }) {
   );
 }
 
-// handleStartClick(inputValue)
+EnterUserName.propTypes = {
+  userName: PropTypes.string,
+  setUserName: PropTypes.func,
+  onClick: PropTypes.func,
+  onChange: PropTypes.func
+};

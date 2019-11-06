@@ -33,7 +33,7 @@ export default function LogoIcon() {
         >
           <feOffset dx="1" dy="1" input="SourceAlpha" />
           <feGaussianBlur stdDeviation="0.5" result="blur" />
-          <feFlood flood-opacity="0.161" />
+          <feFlood floodOpacity="0.161" />
           <feComposite operator="in" in2="blur" />
           <feComposite in="SourceGraphic" />
         </filter>
@@ -60,7 +60,7 @@ export default function LogoIcon() {
         >
           <feOffset dx="1" dy="1" input="SourceAlpha" />
           <feGaussianBlur stdDeviation="0.5" result="blur-2" />
-          <feFlood flood-opacity="0.161" />
+          <feFlood floodOpacity="0.161" />
           <feComposite operator="in" in2="blur-2" />
           <feComposite in="SourceGraphic" />
         </filter>
@@ -74,7 +74,7 @@ export default function LogoIcon() {
         >
           <feOffset dx="1" dy="1" input="SourceAlpha" />
           <feGaussianBlur stdDeviation="0.5" result="blur-3" />
-          <feFlood flood-opacity="0.161" />
+          <feFlood floodOpacity="0.161" />
           <feComposite operator="in" in2="blur-3" />
           <feComposite in="SourceGraphic" />
         </filter>

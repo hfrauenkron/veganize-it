@@ -19,8 +19,8 @@ export default function MenuIcon() {
           x2="26.059"
           fill="none"
           stroke="#242623"
-          stroke-linecap="round"
-          stroke-width="5"
+          strokeLinecap="round"
+          strokeWidth="5"
         />
         <line
           id="Line_11"
@@ -29,8 +29,8 @@ export default function MenuIcon() {
           transform="translate(0 8.778)"
           fill="none"
           stroke="#242623"
-          stroke-linecap="round"
-          stroke-width="5"
+          strokeLinecap="round"
+          strokeWidth="5"
         />
         <line
           id="Line_12"
@@ -39,8 +39,8 @@ export default function MenuIcon() {
           transform="translate(0 17.556)"
           fill="none"
           stroke="#242623"
-          stroke-linecap="round"
-          stroke-width="5"
+          strokeLinecap="round"
+          strokeWidth="5"
         />
       </g>
     </svg>

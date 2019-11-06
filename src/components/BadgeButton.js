@@ -34,7 +34,7 @@ const BadgeButtonSpan = styled.span`
 
 export default function BadgeButton({ light, list, children }) {
   return (
-    <BadgeButtonSpan list={list} light={light}>
+    <BadgeButtonSpan list={list ? 1 : 0} light={light}>
       {children}
     </BadgeButtonSpan>
   );
