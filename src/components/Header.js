@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import LogoIcon from "../icons/LogoIcon";
@@ -12,9 +12,9 @@ import {
 import CloseMenuIcon from "../icons/CloseMenuIcon";
 import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
-// import SpeechBubble from "../components/SpeechBubble";
 
 const HeaderDiv = styled.div`
+  z-index: 2;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -101,10 +101,34 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const Background = styled.div`
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  backdrop-filter: blur(2.5px);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  ${props =>
+    props.clicked
+      ? css`
+          display: block;
+        `
+      : css`
+          display: none;
+        `}
+`;
+
 export default function Header() {
   const [clicked, setClicked] = useState(false);
+  // const [show, setShow] = useState(false);
+  // const node = useRef();
+
+  // useOnClickOutside(node, () => setShow(false));
+
   return (
     <>
+      <Background clicked={clicked} />
       <HeaderDiv>
         <StyledLink to="/home">
           <LogoIcon />

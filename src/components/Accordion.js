@@ -50,11 +50,13 @@ const StyledArrow = styled(ArrowIconDown)`
 
 const AccordionContent = styled.div`
   min-width: 100px;
+  height: 100%;
   color: #242623;
   padding: 5px;
   overflow: hidden;
   display: ${props => (props.clicked ? "block" : "none")};
   transition: max-height 0.6s ease;
+  -webkit-appearance: none;
 `;
 
 const StyledRecipeTitle = styled.h2`
@@ -65,24 +67,24 @@ const StyledRecipeTitle = styled.h2`
 export default function Accordion({ id, name, description, use, recipe }) {
   const [favourites, setFavourites] = useState(getFavouritesFromStorage());
   const [clicked, setClicked] = useState(false);
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
+
+  // function handleLiked() {
+  //   setLiked(!liked);
+  //   console.log(!liked);
+  // }
 
   React.useEffect(() => {
     setFavouritesToStorage(favourites);
   }, [favourites]);
+  console.log(favourites);
 
   function handleClick() {
     setClicked(!clicked);
   }
-
-  function handleLiked() {
-    setLiked(!liked);
-    console.log(!liked);
-  }
-
-  // let liked = favourites.find(favourite => favourite.id === id);
-
   let favourite = { name, id };
+
+  let liked = favourites.find(favourite => favourite.id === id);
 
   function handleSetFavourite() {
     if (
@@ -108,10 +110,10 @@ export default function Accordion({ id, name, description, use, recipe }) {
         <p>{recipe.text}</p>
         <StyledIcons>
           <Favourite
-            // liked={liked}
+            liked={liked}
             onClick={() => {
               handleSetFavourite();
-              handleLiked(liked);
+              // handleLiked();
             }}
           />
         </StyledIcons>

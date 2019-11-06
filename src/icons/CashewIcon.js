@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CashewIcon() {
+export default function CashewIcon(className) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ export default function CashewIcon() {
       height="132.729"
       viewBox="0 0 162.332 132.729"
       id="cashew"
+      className={className}
     >
       <defs>
         <pattern id="pattern2" width="1" height="1" viewBox="0 0 144 110">
