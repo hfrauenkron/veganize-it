@@ -26,7 +26,7 @@ export const data = [
         recipe: {
           title: "Recipe",
           text:
-            "1 part oats and 2 parts water. Blend, strain and store refridgerated for up to 5 days."
+            "1 part oats and 2 parts water. Optional: Add 1-2 dates for light sweetness. Blend, strain and store refridgerated for up to 4 days."
         },
         use: <UseIconsMilk raw coffee baking />
       },
@@ -38,7 +38,7 @@ export const data = [
         recipe: {
           title: "Recipe",
           text:
-            "1 part almonds and 2 parts water. Blend, strain and store refridgerated for up to 5 days."
+            "1 part almonds and 2 parts water. Optional: Add 1-2 dates for light sweetness. Blend, strain and store refridgerated for up to 4 days."
         },
         use: <UseIconsMilk raw coffee baking />
       },
@@ -46,11 +46,11 @@ export const data = [
         name: "Cashew Milk",
         id: 14,
         description:
-          "Great for breakfast cereals, baking and coffee. Cashew Milk has a distinct nutty flavor, is healthy and easy to make at home, with only two ingredients.",
+          "Great for breakfast cereals, baking and coffee. Optional: Add 1-2 dates for light sweetness. Cashew Milk has a distinct nutty flavor, is healthy and easy to make at home, with only two ingredients.",
         recipe: {
           title: "Recipe",
           text:
-            "1 part cashews and 2 parts water. Blend, strain and store refridgerated for up to 5 days."
+            "1 part cashews and 2 parts water. Optional: Add 1-2 dates for light sweetness. Blend, strain and store refridgerated for up to 5 days."
         },
         use: <UseIconsMilk raw baking cooking />
       }
@@ -68,7 +68,7 @@ export const data = [
         recipe: {
           title: "Recipe",
           text:
-            "1 tbsp chia seeds, 2 tbsp water, let sit for 15minutes before use."
+            "1 tbsp chia seeds, 2 tbsp water, let sit for 15minutes or until slimy."
         },
         use: <UseIcons raw baking />
       },
@@ -80,7 +80,7 @@ export const data = [
         recipe: {
           title: "Recipe",
           text:
-            "1 tbsp ground fax seeds, 2 tbsp water, let sit for 15minutes before use."
+            "1 tbsp ground fax seeds, 2 tbsp water, let sit for 15minutes or until slimy."
         },
         use: <UseIcons baking />
       },
@@ -170,7 +170,7 @@ export const data = [
     name: "Buttermilk",
     alt: [
       {
-        name: "Vegan Buttermilk",
+        name: "Nut-Buttermilk",
         id: 51,
         description:
           "An easy to make, inexpensive and healthy alternative. Great for baking and sweet dishes like pancakes.",
@@ -179,7 +179,7 @@ export const data = [
           text:
             "250mL of nut milk, 1 tbsp of apple cider vinegar or fresh lemon juice. Let sit for 15minutes, stirring occasionally."
         },
-        use: <UseIcons baking cooking />
+        use: <UseIcons raw baking cooking />
       }
     ]
   },
@@ -211,24 +211,15 @@ export const data = [
           "Gained from algae, it has a neutral taste and the same thickening and binding properties as the bone-marrow substract gelatin. It is great for baking, jelly or candy making.",
         recipe: {
           title: "",
-          text: ""
-        },
-        use: <UseIcons raw baking cooking />
-      },
-      {
-        name: "Carob Bean Gum",
-        id: 72,
-        description: "",
-        recipe: {
-          title: "",
-          text: ""
+          text: "1 tsp gelatin = 1 teaspoon agar powder"
         },
         use: <UseIcons raw baking cooking />
       },
       {
         name: "Potatoe Starch",
-        id: 73,
-        description: "",
+        id: 72,
+        description:
+          "One of the most popular starch thickeners. Great for sauces, gravies, pie fillings, and puddings. Liquids thickened with potato starch should never be boiled because it will loose its power to thicken.",
         recipe: {
           title: "",
           text: ""
@@ -237,8 +228,9 @@ export const data = [
       },
       {
         name: "Corn Starch",
-        id: 74,
-        description: "",
+        id: 73,
+        description:
+          "One of the most popular starch thickeners. Great for sauces, gravies, pie fillings, and puddings.",
         recipe: {
           title: "",
           text: ""
@@ -269,7 +261,7 @@ export const data = [
     name: "Bacon",
     alt: [
       {
-        name: "Smoked Tofu",
+        name: "Smoked Tofu Bacon",
         id: 91,
         description: "",
         recipe: {
@@ -279,13 +271,14 @@ export const data = [
         use: <UseIcons raw cooking />
       },
       {
-        name: "Smoked Seitan",
+        name: "Rice Paper Bacon",
         description: "",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "3 sheets rice paper, 1 tbsp soy sauce, 1/2 tbsp peanut oil, 1 tsp miso paste, 1 tsp mustard, 1 tsp smoked paprika, 1/2 tsp garlic powder, 1/2 tsp salt. Mix everything but the rice paper. Cut rice paper in stripes, quickly wet, pull through marinade and place on baking tray. Bake for 8-10minutes. "
         },
-        use: <UseIcons raw baking cooking />
+        use: <UseIcons raw cooking />
       }
     ]
   },
@@ -298,8 +291,9 @@ export const data = [
         id: 101,
         description: "",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "Crumble a block of firm or semi-firm tofu, add salt and pepper to taste and cumin for yellow color. Optional: add black salt for eggy taste. Cook in pan for 5-10minutes."
         },
         use: <UseIcons cooking />
       }
@@ -413,12 +407,13 @@ export const data = [
     name: "Worcestershire Sauce",
     alt: [
       {
-        name: "TBD",
+        name: "Vegan Worcestershire Sauce",
         id: 161,
-        description: "",
+        description: "Choose storebought alternatives or make your own.",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "2 cups apple cider vinegar, 1/2 cup soy sauce, 1/4 cup brown sugar, 1 tsp ground ginger, 1 tsp ground mustard, 1 tsp onion powder, 1 clove garlic (crushed), 1/2 tsp cinnamon, 1/2 tsp black pepper. Mix and bring to a boil. Simmer for 20minutes. Strain and let cool."
         },
         use: <UseIcons raw cooking />
       }
@@ -431,10 +426,12 @@ export const data = [
       {
         name: "Cashew Parmesan",
         id: 171,
-        description: "",
+        description:
+          "Especially great for raw use, on pasta, salad dishes or even pizza.",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "3/4 cup raw cashews, 3 tbsp nutritional yeast, 3/4 tsp sea salt, 1/4 tsp garlic powder. Blend / pulse until fine meal consistency is achieved."
         },
         use: <UseIcons raw cooking />
       }
@@ -447,10 +444,11 @@ export const data = [
       {
         name: "Cashew Cream Cheese",
         id: 181,
-        description: "",
+        description: "Great dip or topping for bread or bagels.",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "1 cup raw cashews (soaked in water 4-8 hours, drained and rinsed), 1-2 tbsp lemon juice, 1/2 tsp salt. Blend until smooth. Optional: Add stir-ins of choice (chives, roasted garlic, veggies, strawberries, sun-dried tomatoes, or roasted red peppers)."
         },
         use: <UseIcons raw cooking />
       }
@@ -463,7 +461,7 @@ export const data = [
       {
         name: "Dark Chocolate",
         id: 191,
-        description: "",
+        description: "Many dark chocolates are dairy-free.",
         recipe: {
           title: "",
           text: ""

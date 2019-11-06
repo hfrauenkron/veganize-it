@@ -21,9 +21,9 @@ const StyledHeader = styled(Header)`
 const StyledSpeechBubble = styled.span`
   z-index: 100;
   position: absolute;
-  left: 92px;
-  top: 47px;
-  transform: rotate(5deg);
+  left: 35px;
+  top: 60px;
+  transform: rotate(-3deg);
 `;
 
 export default function Home({ userName }) {
