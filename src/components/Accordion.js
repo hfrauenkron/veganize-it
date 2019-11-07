@@ -65,33 +65,48 @@ const StyledRecipeTitle = styled.h2`
   font-size: 1.3rem;
 `;
 
-export default function Accordion({ id, name, description, use, recipe }) {
+export default function Accordion({
+  id,
+  name,
+  description,
+  use,
+  recipe,
+  location,
+  history
+}) {
   const [favourites, setFavourites] = useState(getFavouritesFromStorage());
-  const [clicked, setClicked] = useState(false);
-  // const [liked, setLiked] = useState(false);
 
-  // function handleLiked() {
-  //   setLiked(!liked);
-  //   console.log(!liked);
-  // }
+  let urlName = name.toLowerCase().replace(/ /g, "%20");
 
+  const [clicked, setClicked] = useState(
+    location.hash === `#${urlName}` ? true : false
+  );
+  console.log(urlName);
   React.useEffect(() => {
     setFavouritesToStorage(favourites);
   }, [favourites]);
-  console.log(favourites);
 
-  function handleClick() {
-    setClicked(!clicked);
-  }
-  let favourite = { name, id };
+  let url = window.location.pathname;
+  localStorage.setItem("url", url);
+
+  let favourite = { name, id, url };
 
   let liked = favourites.find(favourite => favourite.id === id);
 
-  function handleSetFavourite() {
-    if (
-      !favourites.find(existingFavorite => existingFavorite.id === favourite.id)
-    ) {
+  function handleClick() {
+    setClicked(!clicked);
+    history.push(`#${urlName}`);
+  }
+  function handleChangeFavourites() {
+    const existingIndex = favourites.findIndex(
+      existingFavourite => existingFavourite.id === favourite.id
+    );
+    if (existingIndex === -1) {
       const favouritesList = [...favourites, favourite];
+      setFavourites(favouritesList);
+    } else {
+      const favouritesList = [...favourites];
+      favouritesList.splice(existingIndex, 1);
       setFavourites(favouritesList);
     }
   }
@@ -113,8 +128,7 @@ export default function Accordion({ id, name, description, use, recipe }) {
           <Favourite
             liked={liked}
             onClick={() => {
-              handleSetFavourite();
-              // handleLiked();
+              handleChangeFavourites();
             }}
           />
         </StyledIcons>
