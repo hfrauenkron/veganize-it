@@ -49,10 +49,12 @@ export default function Title({
   headerHeadline,
   boldHeadline,
   inactive,
-  children
+  children,
+  className
 }) {
   return (
     <HeadTitle
+      className={className}
       onClick={onClick}
       link={link}
       headline={headline}

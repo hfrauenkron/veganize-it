@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-export default function SpeechBubble({ userName }) {
+export default function SpeechBubble({ children }) {
   const StyledSpeechBubble = styled.span`
     background: #fff;
     width: 100%;
@@ -20,24 +20,22 @@ export default function SpeechBubble({ userName }) {
       position: absolute;
       top: 0;
       left: 50%;
-      width: 0;
-      height: 0;
       border: 15px solid transparent;
       border-bottom-color: #fff;
       border-top: 0;
-      margin-left: -47px;
+      margin-left: -70px;
       margin-top: -12px;
     }
   `;
 
   return (
     <StyledSpeechBubble>
-      Welcome, {userName}!
+      {children}
       <BubbleTriangle />
     </StyledSpeechBubble>
   );
 }
 
 SpeechBubble.propTypes = {
-  userName: PropTypes.string
+  children: PropTypes.node.isRequired
 };

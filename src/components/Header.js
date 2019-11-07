@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import LogoIcon from "../icons/LogoIcon";
 import {
-  HeaderTitle,
   HomeTitle,
   FavouritesTitle,
   AboutTitle,
@@ -12,9 +11,11 @@ import {
 import CloseMenuIcon from "../icons/CloseMenuIcon";
 import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
+import SpeechBubble from "../components/SpeechBubble";
+import Title from "./Title";
 
 const HeaderDiv = styled.div`
-  z-index: 2;
+  z-index: 99;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -24,8 +25,6 @@ const HeaderDiv = styled.div`
   width: 100vw;
   min-height: 76px;
   border: none;
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 900;
   background: #edffe6;
   color: #242623;
   box-shadow: none;
@@ -35,7 +34,7 @@ const MenuDiv = styled.div`
   ${props =>
     props.clicked
       ? css`
-          z-index: 100;
+          z-index: 98;
           position: absolute;
           margin-top: 76px;
         `
@@ -119,11 +118,33 @@ const Background = styled.div`
         `}
 `;
 
-export default function Header() {
+const StyledSpeechBubble = styled.span`
+  z-index: 101;
+  position: absolute;
+  left: 35px;
+  top: 60px;
+  transform: rotate(-3deg);
+  ${props =>
+    props.showBubble
+      ? css`
+          display: block;
+        `
+      : css`
+          display: none;
+        `}
+`;
+
+const StyledTitle = styled(Title)`
+  @media (min-width: 300px) {
+    font-size: calc(28px + (46 - 28) * ((100vw - 300px) / (1600 - 300)));
+    margin: 0 8px 0 0;
+  }
+`;
+
+export default function Header({ children, showBubble }) {
   const [clicked, setClicked] = useState(false);
   // const [show, setShow] = useState(false);
   // const node = useRef();
-
   // useOnClickOutside(node, () => setShow(false));
 
   return (
@@ -133,7 +154,10 @@ export default function Header() {
         <StyledLink to="/home">
           <LogoIcon />
         </StyledLink>
-        <HeaderTitle />
+        <StyledSpeechBubble showBubble={showBubble}>
+          <SpeechBubble>{children}</SpeechBubble>
+        </StyledSpeechBubble>
+        <StyledTitle boldHeadline>VEGANIZE IT</StyledTitle>
         <StyledCloseMenuIcon
           onClick={() => setClicked(false)}
           clicked={clicked}
@@ -144,6 +168,7 @@ export default function Header() {
           <MenuIcon />
         </StyledMenuIcon>
       </HeaderDiv>
+
       <MenuDiv clicked={clicked}>
         <MenuItemsDiv clicked={clicked}>
           <StyledLink to="/">

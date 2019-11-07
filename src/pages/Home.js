@@ -3,9 +3,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Searchbar from "../components/Searchbar";
 import BadgeButtonList from "../components/BadgeButtonList";
-// import { getData } from "../api/getData";
 import { data } from "../api/data";
-import SpeechBubble from "../components/SpeechBubble";
 
 const WrapperDiv = styled.div`
   height: 100%;
@@ -15,15 +13,15 @@ const WrapperDiv = styled.div`
 `;
 
 const StyledHeader = styled(Header)`
+  z-index: 99;
   position: relative;
 `;
 
-const StyledSpeechBubble = styled.span`
-  z-index: 100;
-  position: absolute;
-  left: 35px;
-  top: 60px;
-  transform: rotate(-3deg);
+const StyledSearchbar = styled(Searchbar)`
+  @media (max-width: 390px) {
+    width: 50%;
+    height: 10%;
+  }
 `;
 
 export default function Home({ userName }) {
@@ -46,11 +44,8 @@ export default function Home({ userName }) {
 
   return (
     <WrapperDiv>
-      <StyledHeader />
-      <StyledSpeechBubble>
-        <SpeechBubble userName={userName} />
-      </StyledSpeechBubble>
-      <Searchbar onSearch={handleSearch} />
+      <StyledHeader showBubble children={`Welcome, ${userName}`} />
+      <StyledSearchbar onSearch={handleSearch} />
       <BadgeButtonList data={filteredData} />
     </WrapperDiv>
   );

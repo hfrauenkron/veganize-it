@@ -44,7 +44,7 @@ export default function Favourites({ data, id, name }) {
 
   return (
     <WrapperDiv>
-      <Header />
+      <Header showBubble children="Find your favourites here!" />
       <Title headline>FAVOURITES</Title>
       <BadgeButtonList>
         {favourites.map(favourite => (
