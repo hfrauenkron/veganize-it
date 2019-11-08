@@ -13,7 +13,7 @@ const WelcomeCardDiv = styled.div`
   justify-content: center;
   border-radius: 50%;
   width: 370px;
-  height: 370px;
+  min-height: 370px;
   border: none;
   background: #fff;
   box-shadow: 2px 2px 2px #00000029;
@@ -23,7 +23,8 @@ const WelcomeCardDiv = styled.div`
 
 const StyledParagraph = styled.p`
   text-align: center;
-  margin-top: 8px;
+  margin-top: 0px;
+  padding: 5px;
   font-size: 1.2rem;
 `;
 

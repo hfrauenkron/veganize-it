@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Title from "../components/Title";
-import BadgeButtonClose from "../components/BadgeButtonClose";
-import { Link } from "react-router-dom";
+import FavouriteList from "../components/FavouriteList";
+// import { Link } from "react-router-dom";
 import {
   getFavouritesFromStorage,
-  setFavouritesToStorage
+  removeFavouritesFromStorage
 } from "../api/storage";
 
 const WrapperDiv = styled.div`
@@ -15,46 +15,50 @@ const WrapperDiv = styled.div`
   align-items: center;
 `;
 
-const BadgeButtonList = styled.div`
-  max-width: 500px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
+// const BadgeButtonList = styled.div`
+//   max-width: 500px;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+// `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #fff;
-`;
+// const StyledLink = styled(Link)`
+//   text-decoration: none;
+//   color: #fff;
+// `;
 
-export default function Favourites({ data, id, name }) {
+export default function Favourites() {
   const [favourites, setFavourites] = useState(getFavouritesFromStorage());
 
-  React.useEffect(() => {
-    setFavouritesToStorage(favourites);
-  }, [favourites]);
+  // function handleChangeFavourites(favourite) {
+  //   const existingIndex = favourites.findIndex(
+  //     existingFavourite => existingFavourite.id === favourite.id
+  //   );
+  //   if (existingIndex === -1) {
+  //     const favouritesList = [...favourites, favourite];
+  //     setFavourites(favouritesList);
+  //   } else {
+  //     const favouritesList = [...favourites];
+  //     favouritesList.splice(existingIndex, 1);
+  //     setFavourites(favouritesList);
+  //   }
+  // }
 
   function handleRemoveFavourite() {
-    setFavourites(favourites.filter(favourite => (favourite.id = id)));
+    removeFavouritesFromStorage();
   }
-
-  // const favData = data.find(
-  //   item => item.name.toLowerCase() === name.toLowerCase()
-  // );
+  console.log(favourites);
 
   return (
     <WrapperDiv>
       <Header showBubble children="Find your favourites here!" />
       <Title headline>FAVOURITES</Title>
-      <BadgeButtonList>
-        {favourites.map(favourite => (
-          <BadgeButtonClose key={favourite.id} onClick={handleRemoveFavourite}>
-            <StyledLink to={`/home/${data.name}`}>
-              {favourite.name.toUpperCase()}
-            </StyledLink>
-          </BadgeButtonClose>
-        ))}
-      </BadgeButtonList>
+      <FavouriteList onClick={handleRemoveFavourite} />
     </WrapperDiv>
   );
 }
+
+// function handleRemoveFavourite() {
+//   setFavourites(favourites.filter(favourite => favourite.id === id));
+// }
+// console.log(favourites);

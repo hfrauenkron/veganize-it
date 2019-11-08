@@ -27,7 +27,7 @@ const StyledHeader = styled(Header)`
   position: absolute;
 `;
 
-function HomeContent({ match }) {
+function HomeContent({ match, location, history }) {
   const item = data.find(
     item => item.name.toLowerCase() === match.params.itemName.toLowerCase()
   );
@@ -37,7 +37,7 @@ function HomeContent({ match }) {
       <StyledHeader />
       <StyledDiv>
         <BadgeButton light>{item.name.toUpperCase()}</BadgeButton>
-        <AccordionList alt={item.alt} />
+        <AccordionList alt={item.alt} location={location} history={history} />
         <CardLegend />
       </StyledDiv>
     </WrapperDiv>
