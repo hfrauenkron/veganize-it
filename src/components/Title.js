@@ -6,7 +6,7 @@ const HeadTitle = styled.h1`
   z-index: 0;
   position: relative;
   margin: 0;
-  padding: 0 0 3px 5px;
+  padding: 0 0 3px 0;
   border: none;
   font-family: "Fira Sans", sans-serif;
   font-weight: 900;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import LogoIcon from "../icons/LogoIcon";
@@ -132,6 +132,14 @@ const StyledSpeechBubble = styled.span`
       : css`
           display: none;
         `}
+  ${props =>
+    props.clicked
+      ? css`
+          display: none;
+        `
+      : css`
+          display: block;
+        `};
 `;
 
 const StyledTitle = styled(Title)`
@@ -154,7 +162,7 @@ export default function Header({ children, showBubble }) {
         <StyledLink to="/home">
           <LogoIcon />
         </StyledLink>
-        <StyledSpeechBubble showBubble={showBubble}>
+        <StyledSpeechBubble clicked={clicked} showBubble={showBubble}>
           <SpeechBubble>{children}</SpeechBubble>
         </StyledSpeechBubble>
         <StyledTitle boldHeadline>VEGANIZE IT</StyledTitle>
