@@ -51,7 +51,6 @@ const StyledArrow = styled(ArrowIconDown)`
 
 const AccordionContent = styled.div`
   min-width: 100px;
-  height: 100%;
   color: #242623;
   padding: 5px;
   overflow: hidden;
@@ -65,6 +64,10 @@ const StyledRecipeTitle = styled.h2`
   font-size: 1.3rem;
 `;
 
+function useQuery(location) {
+  return new URLSearchParams(location.search);
+}
+
 export default function Accordion({
   id,
   name,
@@ -75,13 +78,14 @@ export default function Accordion({
   history
 }) {
   const [favourites, setFavourites] = useState(getFavouritesFromStorage());
+  const query = useQuery(location);
 
-  let urlName = name.toLowerCase().replace(/ /g, "%20");
+  let urlName = name.toLowerCase();
 
   const [clicked, setClicked] = useState(
-    location.hash === `#${urlName}` ? true : false
+    location.hash.replace(/%20/g, " ") === `#${urlName}`
   );
-  console.log(urlName);
+  console.log(location, query.getAll("clicked"));
   React.useEffect(() => {
     setFavouritesToStorage(favourites);
   }, [favourites]);
