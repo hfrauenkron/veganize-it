@@ -25,7 +25,7 @@ const HeadTitle = styled.h1`
       return `font-size: 2.5rem; margin: 0 30px 0 0;
         `;
     } else if (props.headline) {
-      return `font-size: 1.3rem; margin: 20px;
+      return `font-size: 1.3rem; margin: 20px 0 5px 0;
         `;
     } else {
       return `font-size: 1.3rem;`;

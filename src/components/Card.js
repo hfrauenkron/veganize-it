@@ -8,7 +8,8 @@ const CardDiv = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 379px;
-  height: 100%;
+  height: auto;
+  overflow: scroll;
   border: none;
   background: #ffffff;
   box-shadow: 2px -2px 2px #00000029;

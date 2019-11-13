@@ -25,13 +25,12 @@ const StyledCloseButton = styled.span`
   position: absolute;
   right: -16px;
   top: -16px;
-  cursor: pointer;
 `;
 
-export default function BadgeButtonClose({ onClick, children }) {
+export default function BadgeButtonClose({ onClick, children, onMouseEnter }) {
   return (
     <WrapperBadge>
-      <BadgeButtonSpan>
+      <BadgeButtonSpan onMouseEnter={onMouseEnter}>
         {children}
         <StyledCloseButton onClick={onClick}>
           <CloseButton />

@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 import LogoIcon from "../icons/LogoIcon";
-import {
-  HomeTitle,
-  FavouritesTitle,
-  AboutTitle,
-  StartTitle
-} from "../stories/Title.stories";
 import CloseMenuIcon from "../icons/CloseMenuIcon";
 import MenuIcon from "../icons/MenuIcon";
 import PropTypes from "prop-types";
@@ -124,22 +118,16 @@ const StyledSpeechBubble = styled.span`
   left: 35px;
   top: 60px;
   transform: rotate(-3deg);
-  ${props =>
-    props.showBubble
-      ? css`
-          display: block;
-        `
-      : css`
-          display: none;
-        `}
-  ${props =>
-    props.clicked
-      ? css`
-          display: none;
-        `
-      : css`
-          display: block;
-        `};
+  ${props => {
+    if (props.clicked) {
+      return `display: none;`;
+    } else if (props.showBubble) {
+      return `display: block;
+        `;
+    } else {
+      return `display: none;`;
+    }
+  }};
 `;
 
 const StyledTitle = styled(Title)`
@@ -162,7 +150,10 @@ export default function Header({ children, showBubble }) {
         <StyledLink to="/home">
           <LogoIcon />
         </StyledLink>
-        <StyledSpeechBubble clicked={clicked} showBubble={showBubble}>
+        <StyledSpeechBubble
+          showBubble={showBubble}
+          clicked={clicked === showBubble}
+        >
           <SpeechBubble>{children}</SpeechBubble>
         </StyledSpeechBubble>
         <StyledTitle boldHeadline>VEGANIZE IT</StyledTitle>
@@ -180,16 +171,16 @@ export default function Header({ children, showBubble }) {
       <MenuDiv clicked={clicked}>
         <MenuItemsDiv clicked={clicked}>
           <StyledLink to="/">
-            <StartTitle />
+            <Title>START</Title>
           </StyledLink>
           <StyledLink to="/home">
-            <HomeTitle />
+            <Title>HOME</Title>
           </StyledLink>
           <StyledLink to="/favourites">
-            <FavouritesTitle />
+            <Title>FAVOURITES</Title>
           </StyledLink>
           <StyledLink to="/about">
-            <AboutTitle />
+            <Title>ABOUT</Title>
           </StyledLink>
         </MenuItemsDiv>
       </MenuDiv>
@@ -199,5 +190,6 @@ export default function Header({ children, showBubble }) {
 
 Header.propTypes = {
   clicked: PropTypes.bool,
+  showBubble: PropTypes.bool,
   onClick: PropTypes.func
 };

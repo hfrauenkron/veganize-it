@@ -14,6 +14,7 @@ const StyledCloseButton = styled.button`
   background: #ffffff;
   color: #242623;
   padding: 0px;
+  cursor: pointer;
 `;
 
 export default function CloseButton() {
