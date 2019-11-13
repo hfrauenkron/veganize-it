@@ -22,6 +22,6 @@ export function getUserNameFromStorage() {
   }
 }
 
-export function setUserNameToStorage(string) {
-  localStorage.setItem("userName", JSON.stringify(string));
+export function setUserNameToStorage(userName) {
+  localStorage.setItem("userName", JSON.stringify(userName));
 }

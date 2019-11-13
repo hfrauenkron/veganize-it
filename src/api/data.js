@@ -265,8 +265,9 @@ export const data = [
         id: 91,
         description: "",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "1 block extra firm tofu, drained and patted dry. Slice thinly. Mix 1 cup soy sauce, 2 tablespoons tomato paste, 2 tbsp vegan Worcestershire sauce, 2 tbsp Maple Syrup, 2 tbsp Liquid Smoke, 2 cups water. Marinade the sliced tofu for at least 4 hours. Cook or bake until brown."
         },
         use: <UseIcons raw cooking />
       },
@@ -393,10 +394,11 @@ export const data = [
       {
         name: "Coconut Cream",
         id: 41,
-        description: "",
+        description: "An easy diy",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "Bring the coconut milk to a boil, then let simmer for abut 40 minutes or until the milk has reduced by half. "
         },
         use: <UseIcons raw baking cooking />
       }
@@ -461,7 +463,8 @@ export const data = [
       {
         name: "Dark Chocolate",
         id: 191,
-        description: "Many dark chocolates are dairy-free.",
+        description:
+          "Many dark chocolates are dairy-free. Check the ingredients list.",
         recipe: {
           title: "",
           text: ""
@@ -559,10 +562,12 @@ export const data = [
       {
         name: "Pulled Jackfruit",
         id: 221,
-        description: "",
+        description:
+          "Looks, smells and tastes amazingly similar. Either buy a marinated jackfruit or marinate it yourself.",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "1 can jackfruit, rinsed dried, sorted. 1 pinch sea salt and black pepper, 1 tbsp avocado oil, 1/4 cup diced red or white onion, 2 cloves garlic (minced), 1/2 cup vegetable stock, 1/2 cup cashew milk, 1 tsp maple syrup, 1 tbsp lime juice, 1/2 tsp sea salt, 1/2 tbsp tamari, 1/2 tsp smoked paprika. Blend and add jackfruit, stir to coat. Let sit for 10minutes and cook for ca. 5min."
         },
         use: <UseIcons cooking />
       }
@@ -575,10 +580,12 @@ export const data = [
       {
         name: "Pulled Jackfruit",
         id: 221,
-        description: "",
+        description:
+          "Looks, smells and tastes amazingly similar. Either buy a marinated jackfruit or marinate it yourself.",
         recipe: {
-          title: "",
-          text: ""
+          title: "Recipe",
+          text:
+            "1 can jackfruit, rinsed dried, sorted. 1 pinch sea salt and black pepper, 1 tbsp avocado oil, 1/4 cup diced red or white onion, 2 cloves garlic (minced), 1/2 cup vegetable stock, 1/2 cup cashew milk, 1 tsp maple syrup, 1 tbsp lime juice, 1/2 tsp sea salt, 1/2 tbsp tamari, 1/2 tsp smoked paprika. Blend and add jackfruit, stir to coat. Let sit for 10minutes and cook for ca. 5min."
         },
         use: <UseIcons cooking />
       }

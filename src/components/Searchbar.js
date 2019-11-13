@@ -14,6 +14,9 @@ const StyledSearchbar = styled.div`
   box-shadow: 2px 2px 2px #00000029;
   margin: 35px 0 20px 0;
   background: #ffffff;
+  @media (max-width: 390px) {
+    width: 50px;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -50,6 +53,7 @@ export default function Searchbar({ onSearch }) {
         id="search"
         type="search"
         placeholder="What do you want to replace?"
+        autoComplete="off"
         onChange={handleFilter}
       />
       <StyledSearchIcon>

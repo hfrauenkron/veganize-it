@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { NameTitle, StartTitle } from "../stories/Title.stories";
 import PropTypes from "prop-types";
+import Title from "./Title";
 
 const EnterNameDiv = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 265px;
 `;
@@ -15,7 +15,7 @@ const EnterNameDiv = styled.div`
 const StyledLogin = styled.input`
   border-radius: 8px;
   border: none;
-  height: 41px;
+  min-height: 41px;
   width: 240px;
   background: #edffe6;
   box-shadow: 2px 2px 2px #00000029;
@@ -28,9 +28,10 @@ const StyledLogin = styled.input`
     outline: none;
   }
   font-size: 1.3rem;
+  -webkit-appearance: none;
 `;
 
-const StyledTitleBottom = styled.span`
+const StyledTitleBottom = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -38,14 +39,17 @@ const StyledTitleBottom = styled.span`
   margin: 10px 0 -10px;
   padding-right: 10px;
   font-size: 1.3rem;
+  min-height: 30px;
 `;
 
-const StyledTitleTop = styled.span`
+const StyledTitleTop = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 12px 0 -2px 0;
+  margin: 30px 0 -2px 0;
   padding-right: 5px;
+  min-height: 30px;
 `;
 
 const StyledLink = styled(Link)`
@@ -64,20 +68,22 @@ export default function EnterUserName({ userName, setUserName }) {
   return (
     <EnterNameDiv>
       <StyledTitleTop>
-        <NameTitle />
+        <Title>SO GLAD YOU'RE HERE!</Title>
       </StyledTitleTop>
-      <StyledLogin
-        type="text"
-        placeholder="What's your name?"
-        value={inputValue}
-        onChange={handleInput}
-      />
+      <div>
+        <StyledLogin
+          type="text"
+          placeholder="What's your name?"
+          value={inputValue}
+          onChange={handleInput}
+        />
+      </div>
       <StyledTitleBottom>
         <StyledLink
           to="/home"
           onClick={() => setUserName((userName = inputValue || "Friend"))}
         >
-          <StartTitle />
+          <Title>START</Title>
         </StyledLink>
       </StyledTitleBottom>
     </EnterNameDiv>
@@ -85,7 +91,7 @@ export default function EnterUserName({ userName, setUserName }) {
 }
 
 EnterUserName.propTypes = {
-  userName: PropTypes.string,
+  userName: PropTypes.string || PropTypes.array,
   setUserName: PropTypes.func,
   onClick: PropTypes.func,
   onChange: PropTypes.func

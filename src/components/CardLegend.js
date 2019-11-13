@@ -12,13 +12,11 @@ const CardDiv = styled.div`
   justify-content: center;
   font-size: 0.75rem;
   width: 379px;
-  height: 100%;
+  min-height: 200px;
   border: none;
   background: #edffe6;
-  /* box-shadow: 2px 2px 2px #00000029; */
   margin: 30px 20px 0px;
   padding: 10px 20px 15px 20px;
-  -webkit-appearance: none;
 `;
 
 const StyledRawIcon = styled(RawIcon)`

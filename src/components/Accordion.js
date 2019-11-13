@@ -93,7 +93,9 @@ export default function Accordion({
   let url = window.location.pathname;
   localStorage.setItem("url", url);
 
-  let favourite = { name, id, url };
+  const favourite = { name, id, url };
+
+  // const [favourite, setFavourite] = useState({ name, id, url });
 
   let liked = favourites.find(favourite => favourite.id === id);
 
@@ -101,7 +103,9 @@ export default function Accordion({
     setClicked(!clicked);
     history.push(`#${urlName}`);
   }
+
   function handleChangeFavourites() {
+    const favourites = getFavouritesFromStorage();
     const existingIndex = favourites.findIndex(
       existingFavourite => existingFavourite.id === favourite.id
     );
@@ -111,6 +115,7 @@ export default function Accordion({
     } else {
       const favouritesList = [...favourites];
       favouritesList.splice(existingIndex, 1);
+      // delete favouritesList[existingIndex];
       setFavourites(favouritesList);
     }
   }

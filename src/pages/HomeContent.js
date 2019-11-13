@@ -7,7 +7,7 @@ import AccordionList from "../components/AccordionList";
 import CardLegend from "../components/CardLegend";
 
 const WrapperDiv = styled.div`
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

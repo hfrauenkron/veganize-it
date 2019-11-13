@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const StyledSpeechBubble = styled.span`
@@ -22,8 +22,8 @@ const StyledSpeechBubble = styled.span`
   }
 `;
 
-export default function SpeechBubble({ children, clicked }) {
-  return <StyledSpeechBubble clicked={clicked}>{children}</StyledSpeechBubble>;
+export default function SpeechBubble({ children }) {
+  return <StyledSpeechBubble>{children}</StyledSpeechBubble>;
 }
 
 SpeechBubble.propTypes = {
