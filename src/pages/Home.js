@@ -44,7 +44,7 @@ export default function Home({ userName }) {
 
   return (
     <WrapperDiv>
-      <StyledHeader showBubble children={`Welcome, ${userName}`} />
+      <StyledHeader showBubble children={`Welcome, ${userName}!`} />
       <StyledSearchbar onSearch={handleSearch} />
       <BadgeButtonList data={filteredData} />
     </WrapperDiv>
