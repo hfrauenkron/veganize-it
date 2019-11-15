@@ -14,6 +14,7 @@ const CardDiv = styled.div`
   width: 379px;
   min-height: 200px;
   border: none;
+  border-radius: 10px;
   background: #edffe6;
   margin: 30px 20px 0px;
   padding: 10px 20px 15px 20px;
@@ -43,7 +44,6 @@ const StyledIcon = styled.div`
   align-items: center;
   height: 35px;
   min-width: 48px;
-  background: #ffffff;
   border-radius: 5px;
   padding: 5px;
 `;
